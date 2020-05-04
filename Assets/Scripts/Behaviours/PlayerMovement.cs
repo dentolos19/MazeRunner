@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController _controller;
 
-    public float speed = 10;
+    public float speed = 5;
 
     private void Awake()
     {

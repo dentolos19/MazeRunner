@@ -3,12 +3,7 @@
 public class MazeDataGenerator
 {
 
-    private float _placementThreshold;
-
-    public MazeDataGenerator()
-    {
-        _placementThreshold = 0.1f;
-    }
+    private const float PlacementThreshold = 0.1f;
 
     public int[,] FromDimensions(int rows, int columns)
     {
@@ -25,7 +20,7 @@ public class MazeDataGenerator
                 }
                 else if (ri % 2 == 0 && ci % 2 == 0)
                 {
-                    if (!(Random.value > _placementThreshold))
+                    if (!(Random.value > PlacementThreshold))
                         continue;
                     data[ri, ci] = 1;
                     var a = Random.value < 0.5 ? 0 : Random.value < 0.5 ? -1 : 1;

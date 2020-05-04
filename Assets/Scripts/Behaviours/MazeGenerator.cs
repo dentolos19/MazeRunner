@@ -36,12 +36,12 @@ public class MazeGenerator : MonoBehaviour
         meshRenderer.materials = new Material[2] { floorMaterial, wallMaterial };
     }
 
-    public void Generate(int value)
+    private void Generate(int value)
     {
         Generate(value - 2, value);
     }
 
-    public void Generate(int rows, int column)
+    private void Generate(int rows, int column)
     {
         if (rows % 2 == 0 && column % 2 == 0)
             Debug.LogWarning("Odd numbers works better for the maze.");
