@@ -2,16 +2,30 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerCompass : MonoBehaviour
+public class PlayerInterface : MonoBehaviour
 {
 
-    public TextMeshProUGUI text;
+    private SpeedTimer _timer;
+    
+    public TextMeshProUGUI compass;
+    public TextMeshProUGUI timer;
 
+    private void Awake()
+    {
+        _timer = gameObject.AddComponent<SpeedTimer>();
+    }
+
+    private void Start()
+    {
+        _timer.Start();
+    }
+    
     private void Update()
     {
         var value = Math.Round(transform.localEulerAngles.y);
         var direction = GetDirectionFromDouble(value);
-        text.text = $"{value}º | {direction}";
+        compass.text = $"{value}º | {direction}";
+        timer.text = _timer.Elasped.Minutes > 0 ? $"{_timer.Elasped.Minutes} mins {_timer.Elasped.Seconds} secs" : $"{_timer.Elasped.Seconds} secs";
     }
 
     private static string GetDirectionFromDouble(double value)

@@ -6,7 +6,7 @@ public class MazeGenerator : MonoBehaviour
     private int[,] _data;
     private MazeDataGenerator _dataGenerator;
     private MazeMeshGenerator _meshGenerator;
-    
+
     public Material floorMaterial;
     public Material wallMaterial;
 
