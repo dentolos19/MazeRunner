@@ -7,6 +7,7 @@ public class PlayerInterface : MonoBehaviour
 {
 
     private bool _isPauseScreenShowing;
+    private bool _gameHasEnded;
     private Stopwatch _timer;
     
     public TextMeshProUGUI compass;
@@ -39,21 +40,28 @@ public class PlayerInterface : MonoBehaviour
     {
         if (!other.CompareTag("Goal"))
             return;
+        Cursor.lockState = CursorLockMode.None;
+        _timer.Stop();
+        _gameHasEnded = true;
         endScreen.SetActive(true);
     }
     
     private void TogglePause()
     {
+        if (_gameHasEnded)
+            return;
         _isPauseScreenShowing = !_isPauseScreenShowing;
         pauseScreen.SetActive(_isPauseScreenShowing);
         if (_isPauseScreenShowing)
         {
             Cursor.lockState = CursorLockMode.None;
+            _timer.Stop();
             Time.timeScale = 0;
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
+            _timer.Start();
             Time.timeScale = 1;
         }
     }
