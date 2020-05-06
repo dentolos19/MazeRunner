@@ -1,8 +1,10 @@
 ﻿// Credits to Rob Pearson
 // https://forum.unity.com/threads/free-simple-ai-behavioral-script.89543
 
+using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(CharacterController))]
 public class EnemyAi : MonoBehaviour
@@ -10,11 +12,7 @@ public class EnemyAi : MonoBehaviour
 
     private const float Antigravity = 2.0f;
 
-    public float attackRange = 10.0f;
-
-    public float attackTime = 0.50f;
-
-    public bool canFly;
+    private readonly float _gravity = Physics.gravity.y;
 
     private CharacterController _characterController;
 
@@ -28,19 +26,9 @@ public class EnemyAi : MonoBehaviour
 
     private float _estHeight;
 
-    public bool estimateElevation;
-
-    public float estRayTimer = 1.0f;
-
     private bool _executeBufferState;
 
-    public float floatHeight;
-
     private bool _go = true;
-
-    private readonly float _gravity = Physics.gravity.y;
-
-    public float huntingTimer = 5.0f;
 
     private bool _initialGo;
 
@@ -52,8 +40,40 @@ public class EnemyAi : MonoBehaviour
 
     private bool _monitorRunTo;
 
+    private bool _pauseWpControl;
+
+    private bool _playerHasBeenSeen;
+
+    private Vector3 _randomDirection;
+
+    private float _randomDirectionTimer;
+
+    private bool _smoothAttackRangeBuffer;
+
+    private bool _targetIsOutOfSight;
+
+    private bool _walkInRandomDirection;
+
+    private bool _wpCountdown;
+
+    private int _wpPatrol;
+
+    public float attackRange = 10.0f;
+
+    public float attackTime = 0.50f;
+
+    public bool canFly;
+
+    public bool estimateElevation;
+
+    public float estRayTimer = 1.0f;
+
+    public float floatHeight;
+
+    public float huntingTimer = 5.0f;
+
     public float moveableRadius = 100;
-    
+
     public bool on = true;
 
     public bool pauseAtWaypoints;
@@ -62,14 +82,6 @@ public class EnemyAi : MonoBehaviour
 
     public float pauseMin = 1;
 
-    private bool _pauseWpControl;
-
-    private bool _playerHasBeenSeen;
-
-    private Vector3 _randomDirection;
-
-    private float _randomDirectionTimer;
-    
     public int randomSpeed = 7;
 
     public bool requireTarget = true;
@@ -88,25 +100,15 @@ public class EnemyAi : MonoBehaviour
 
     public bool runTo;
 
-    private bool _smoothAttackRangeBuffer;
-
     public Transform target;
-
-    private bool _targetIsOutOfSight;
 
     public bool useWaypoints;
 
     public float visualRadius = 100;
 
-    private bool _walkInRandomDirection;
-
     public int walkSpeed = 10;
 
     public Transform[] waypoints;
-
-    private bool _wpCountdown;
-
-    private int _wpPatrol;
 
     private void Start()
     {
@@ -115,624 +117,330 @@ public class EnemyAi : MonoBehaviour
 
     private IEnumerator Initialize()
     {
-
         if (estimateElevation && floatHeight > 0.0f)
             _estGravityTimer = Time.time;
-
         _characterController = gameObject.GetComponent<CharacterController>();
-
         _initialGo = true;
-
         yield return null;
-
     }
-
-    //---Main Functionality---//
 
     private void Update()
     {
-
         if (!on || !_initialGo)
             return;
-        AIFunctionality();
-
+        AiFunctionality();
     }
 
-    private void AIFunctionality()
+    private void AiFunctionality()
     {
-
         if (!target && requireTarget)
-            return; //if no target was set and we require one, AI will not function.
-
-        //Functionality Updates
-
-        _lastVisTargetPos = target.position; //Target tracking method for semi-intelligent AI
-
-        var moveToward = _lastVisTargetPos - transform.position; //Used to face the AI in the direction of the target
-
-        var moveAway = transform.position - _lastVisTargetPos; //Used to face the AI away from the target when running away
-
-        var distance = Vector3.Distance(transform.position, target.position);
-
+            return;
+        var tPos = target.position;
+        _lastVisTargetPos = tPos;
+        var cPos = transform.position;
+        var moveToward = _lastVisTargetPos - cPos;
+        var moveAway = cPos - _lastVisTargetPos;
+        var distance = Vector3.Distance(cPos, tPos);
         if (_go)
             MonitorGravity();
-
-        if (!requireTarget)
-        {
-
-            //waypoint only functionality
-
-            Patrol();
-
-        }
+        if (!requireTarget) { Patrol(); }
         else if (TargetIsInSight())
         {
-
-            if (!_go) //useWaypoints is false and the player has exceeded moveableRadius, shutdown AI until player is near.
-
+            if (!_go)
                 return;
-
             if (distance > attackRange && !runAway && !runTo)
             {
-
-                _enemyCanAttack = false; //the target is too far away to attack
-
-                MoveTowards(moveToward); //move closer
-
+                _enemyCanAttack = false;
+                MoveTowards(moveToward);
             }
             else if (_smoothAttackRangeBuffer && distance > attackRange + 5.0f)
             {
-
                 _smoothAttackRangeBuffer = false;
-
                 WalkNewPath();
-
             }
             else if ((runAway || runTo) && distance > runDistance && !_executeBufferState)
             {
-
-                //move in random directions.
-
                 if (_monitorRunTo)
                     _monitorRunTo = false;
-
                 if (runAway)
                     WalkNewPath();
                 else
                     MoveTowards(moveToward);
-
             }
             else if ((runAway || runTo) && distance < runDistance && !_executeBufferState)
             {
-                //make sure they do not get too close to the target
-
-                //AHH! RUN AWAY!...  or possibly charge :D
-
-                _enemyCanAttack = false; //can't attack, we're running!
-
+                _enemyCanAttack = false;
                 if (!_monitorRunTo)
-                    _executeBufferState = true; //smooth buffer is now active!
-
-                _walkInRandomDirection = false; //obviously we're no longer moving at random.
-
-                if (runAway)
-                    MoveTowards(moveAway); //move away
-                else
-                    MoveTowards(moveToward); //move toward
-
+                    _executeBufferState = true;
+                _walkInRandomDirection = false;
+                MoveTowards(runAway ? moveAway : moveToward);
             }
-            else if (_executeBufferState && runAway && distance < runBufferDistance || runTo && distance > runBufferDistance)
-            {
-
-                //continue to run!
-
-                if (runAway)
-                    MoveTowards(moveAway); //move away
-                else
-                    MoveTowards(moveToward); //move toward
-
-            }
+            else if (_executeBufferState && runAway && distance < runBufferDistance || runTo && distance > runBufferDistance) { MoveTowards(runAway ? moveAway : moveToward); }
             else if (_executeBufferState && (runAway && distance > runBufferDistance || runTo && distance < runBufferDistance))
             {
-
-                _monitorRunTo = true; //make sure that when we have made it to our buffer distance (close to user) we stop the charge until far enough away.
-
-                _executeBufferState = false; //go back to normal activity
-
+                _monitorRunTo = true;
+                _executeBufferState = false;
             }
-
-            //start attacking if close enough
-
-            if (distance < attackRange || !runAway && !runTo && distance < runDistance)
-            {
-
-                if (runAway)
-                    _smoothAttackRangeBuffer = true;
-
-                if (Time.time > _lastShotFired + attackTime)
-                    StartCoroutine(Attack());
-
-            }
-
+            if (!(distance < attackRange) && (runAway || runTo || !(distance < runDistance)))
+                return;
+            if (runAway)
+                _smoothAttackRangeBuffer = true;
+            if (Time.time > _lastShotFired + attackTime)
+                StartCoroutine(Attack());
         }
         else if (_playerHasBeenSeen && !_targetIsOutOfSight && _go)
         {
-
             _lostPlayerTimer = Time.time + huntingTimer;
-
             StartCoroutine(HuntDownTarget(_lastVisTargetPos));
-
         }
         else if (useWaypoints) { Patrol(); }
-        else if (!_playerHasBeenSeen && _go && (moveableRadius == 0 || distance < moveableRadius))
-        {
-
-            //the idea here is that the enemy has not yet seen the player, but the player is fairly close while still not visible by the enemy
-
-            //it will move in a random direction continuously altering its direction every 2 seconds until it does see the player.
-
-            WalkNewPath();
-
-        }
-
+        else if (!_playerHasBeenSeen && _go && (Math.Abs(moveableRadius) < 1 || distance < moveableRadius)) { WalkNewPath(); }
     }
-
-    //attack stuff...
 
     private IEnumerator Attack()
     {
-
         _enemyCanAttack = true;
-
-        if (!_enemyIsAttacking)
+        if (_enemyIsAttacking)
+            yield break;
+        _enemyIsAttacking = true;
+        while (_enemyCanAttack)
         {
-
-            _enemyIsAttacking = true;
-
-            while (_enemyCanAttack)
-            {
-
-                _lastShotFired = Time.time;
-
-                //implement attack variables here
-
-                yield return new WaitForSeconds(attackTime);
-
-            }
-
+            _lastShotFired = Time.time;
+            yield return new WaitForSeconds(attackTime);
         }
-
     }
-
-    //----Helper Functions---//
-
-    //verify enemy can see the target
 
     private bool TargetIsInSight()
     {
-
-        //determine if the enemy should be doing anything other than standing still
-
         if (moveableRadius > 0 && Vector3.Distance(transform.position, target.position) > moveableRadius)
             _go = false;
         else
             _go = true;
-
-        //then lets make sure the target is within the vision radius we allowed our enemy
-
-        //remember, 0 radius means to ignore this check
-
         if (visualRadius > 0 && Vector3.Distance(transform.position, target.position) > visualRadius)
             return false;
-
-        //Now check to make sure nothing is blocking the line of sight
-
-        RaycastHit sight;
-
-        if (Physics.Linecast(transform.position, target.position, out sight))
-        {
-
-            if (!_playerHasBeenSeen && sight.transform == target)
-                _playerHasBeenSeen = true;
-
-            return sight.transform == target;
-
-        }
-        return false;
-
+        if (!Physics.Linecast(transform.position, target.position, out var sight))
+            return false;
+        if (!_playerHasBeenSeen && sight.transform == target)
+            _playerHasBeenSeen = true;
+        return sight.transform == target;
     }
-
-    //target tracking
 
     private IEnumerator HuntDownTarget(Vector3 position)
     {
-
-        //if this function is called, the enemy has lost sight of the target and must track him down!
-
-        //assuming AI is not too intelligent, they will only move toward his last position, and hope they see him
-
-        //this can be fixed later to update the lastVisTargetPos every couple of seconds to leave some kind of trail
-
         _targetIsOutOfSight = true;
-
         while (_targetIsOutOfSight)
         {
-
             var moveToward = position - transform.position;
-
             MoveTowards(moveToward);
-
-            //check if we found the target yet
-
             if (TargetIsInSight())
             {
-
                 _targetIsOutOfSight = false;
-
                 break;
-
             }
-
-            //check to see if we should give up our search
-
             if (Time.time > _lostPlayerTimer)
             {
-
                 _targetIsOutOfSight = false;
-
                 _playerHasBeenSeen = false;
-
                 break;
-
             }
-
             yield return null;
-
         }
 
     }
 
     private void Patrol()
     {
-
         if (_pauseWpControl)
             return;
-
         var destination = CurrentPath();
-
-        var moveToward = destination - transform.position;
-
-        var distance = Vector3.Distance(transform.position, destination);
-
+        var position = transform.position;
+        var moveToward = destination - position;
+        var distance = Vector3.Distance(position, destination);
         MoveTowards(moveToward);
-
-        if (distance <= 1.5f + floatHeight)
+        if (!(distance <= 1.5f + floatHeight))
+            return;
+        if (pauseAtWaypoints)
         {
-            // || (distance < floatHeight+1.5f)) {
-
-            if (pauseAtWaypoints)
-            {
-
-                if (!_pauseWpControl)
-                {
-
-                    _pauseWpControl = true;
-
-                    StartCoroutine(WaypointPause());
-
-                }
-
-            }
-            else { NewPath(); }
-
+            if (_pauseWpControl)
+                return;
+            _pauseWpControl = true;
+            StartCoroutine(WaypointPause());
         }
-
+        else { NewPath(); }
     }
 
     private IEnumerator WaypointPause()
     {
-
         yield return new WaitForSeconds(Random.Range(pauseMin, pauseMax));
-
         NewPath();
-
         _pauseWpControl = false;
-
     }
 
     private Vector3 CurrentPath()
     {
-
         return waypoints[_wpPatrol].position;
-
     }
 
     private void NewPath()
     {
-
         if (!_wpCountdown)
         {
-
             _wpPatrol++;
-
-            if (_wpPatrol >= waypoints.GetLength(0))
+            if (_wpPatrol < waypoints.GetLength(0))
+                return;
+            if (reversePatrol)
             {
-
-                if (reversePatrol)
-                {
-
-                    _wpCountdown = true;
-
-                    _wpPatrol -= 2;
-
-                }
-                else { _wpPatrol = 0; }
-
+                _wpCountdown = true;
+                _wpPatrol -= 2;
             }
-
+            else { _wpPatrol = 0; }
         }
         else if (reversePatrol)
         {
-
             _wpPatrol--;
-
-            if (_wpPatrol < 0)
-            {
-
-                _wpCountdown = false;
-
-                _wpPatrol = 1;
-
-            }
-
+            if (_wpPatrol >= 0)
+                return;
+            _wpCountdown = false;
+            _wpPatrol = 1;
         }
 
     }
-
-    //random movement behaviour
 
     private void WalkNewPath()
     {
-
         if (!_walkInRandomDirection)
         {
-
             _walkInRandomDirection = true;
-
-            if (!_playerHasBeenSeen)
-                _randomDirection = new Vector3(Random.Range(-0.15f, 0.15f), 0, Random.Range(-0.15f, 0.15f));
-            else
-                _randomDirection = new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
-
+            _randomDirection = !_playerHasBeenSeen ? new Vector3(Random.Range(-0.15f, 0.15f), 0, Random.Range(-0.15f, 0.15f)) : new Vector3(Random.Range(-0.5f, 0.5f), 0, Random.Range(-0.5f, 0.5f));
             _randomDirectionTimer = Time.time;
-
         }
         else if (_walkInRandomDirection) { MoveTowards(_randomDirection); }
-
-        if (Time.time - _randomDirectionTimer > 2) //choose a new random direction after 2 seconds
-
+        if (Time.time - _randomDirectionTimer > 2)
             _walkInRandomDirection = false;
-
     }
-
-    //standard movement behaviour
 
     private void MoveTowards(Vector3 direction)
     {
-
         direction.y = 0;
-
         var speed = walkSpeed;
-
         if (_walkInRandomDirection)
             speed = randomSpeed;
-
         if (_executeBufferState)
             speed = runSpeed;
-
-        //rotate toward or away from the target
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
-
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-
-        //slow down when we are not facing the target
-
+        Transform trans;
+        (trans = transform).rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), rotationSpeed * Time.deltaTime);
+        trans.eulerAngles = new Vector3(0, trans.eulerAngles.y, 0);
         var forward = transform.TransformDirection(Vector3.forward);
-
         var speedModifier = Vector3.Dot(forward, direction.normalized);
-
         speedModifier = Mathf.Clamp01(speedModifier);
-
-        //actually move toward or away from the target
-
-        direction = forward * speed * speedModifier;
-
+        direction = forward * (speed * speedModifier);
         if (!canFly && floatHeight <= 0.0f)
             direction.y -= _gravity;
-
         _characterController.Move(direction * Time.deltaTime);
 
     }
 
-    //continuous gravity checks
-
     private void MonitorGravity()
     {
-
         var direction = new Vector3(0, 0, 0);
-
         if (!canFly && floatHeight > 0.0f)
         {
-
-            //we need to make sure our enemy is floating.. using evil raycasts! bwahahahah!
-
             if (estimateElevation && estRayTimer > 0.0f)
             {
-
                 if (Time.time > _estGravityTimer)
                 {
-
-                    RaycastHit floatCheck;
-
-                    if (Physics.Raycast(transform.position, -Vector3.up, out floatCheck))
+                    if (Physics.Raycast(transform.position, -Vector3.up, out var floatCheck))
                     {
-
                         if (floatCheck.distance < floatHeight - 0.5f)
                         {
-
                             _estCheckDirection = 1;
-
                             _estHeight = floatHeight - floatCheck.distance;
-
                         }
                         else if (floatCheck.distance > floatHeight + 0.5f)
                         {
-
                             _estCheckDirection = 2;
-
                             _estHeight = floatCheck.distance - floatHeight;
-
                         }
                         else { _estCheckDirection = 3; }
-
                     }
                     else
                     {
-
                         _estCheckDirection = 2;
-
                         _estHeight = floatHeight * 2;
-
                     }
-
                     _estGravityTimer = Time.time + estRayTimer;
-
                 }
-
                 switch (_estCheckDirection)
                 {
-
                     case 1:
-
                         direction.y += Antigravity;
-
                         _estHeight -= direction.y * Time.deltaTime;
-
                         break;
-
                     case 2:
-
                         direction.y -= _gravity;
-
                         _estHeight -= direction.y * Time.deltaTime;
-
                         break;
-
                 }
-
             }
             else
             {
-
-                RaycastHit floatCheck;
-
-                if (Physics.Raycast(transform.position, -Vector3.up, out floatCheck, floatHeight + 1.0f))
+                if (Physics.Raycast(transform.position, -Vector3.up, out var floatCheck, floatHeight + 1.0f))
                 {
-
                     if (floatCheck.distance < floatHeight)
                         direction.y += Antigravity;
-
                 }
                 else { direction.y -= _gravity; }
-
             }
-
         }
         else
         {
-
-            //bird like creature! Again with the evil raycasts! :p
-
             if (estimateElevation && estRayTimer > 0.0f)
             {
-
                 if (Time.time > _estGravityTimer)
                 {
-
-                    RaycastHit floatCheck;
-
-                    if (Physics.Raycast(transform.position, -Vector3.up, out floatCheck))
+                    if (Physics.Raycast(transform.position, -Vector3.up, out var floatCheck))
                     {
-
                         if (floatCheck.distance < floatHeight - 0.5f)
                         {
-
                             _estCheckDirection = 1;
-
                             _estHeight = floatHeight - floatCheck.distance;
-
                         }
                         else if (floatCheck.distance > floatHeight + 0.5f)
                         {
-
                             _estCheckDirection = 2;
-
                             _estHeight = floatCheck.distance - floatHeight;
-
                         }
                         else { _estCheckDirection = 3; }
-
                     }
-
                     _estGravityTimer = Time.time + estRayTimer;
-
                 }
-
                 switch (_estCheckDirection)
                 {
-
                     case 1:
-
                         direction.y += Antigravity;
-
                         _estHeight -= direction.y * Time.deltaTime;
-
                         break;
-
                     case 2:
-
                         direction.y -= Antigravity;
-
                         _estHeight -= direction.y * Time.deltaTime;
-
                         break;
-
                 }
-
             }
             else
             {
-
-                RaycastHit floatCheck;
-
-                if (Physics.Raycast(transform.position, -Vector3.up, out floatCheck))
+                if (Physics.Raycast(transform.position, -Vector3.up, out var floatCheck))
                 {
-
                     if (floatCheck.distance < floatHeight - 0.5f)
                         direction.y += Antigravity;
                     else if (floatCheck.distance > floatHeight + 0.5f)
                         direction.y -= Antigravity;
-
                 }
 
             }
 
         }
-
         if (!estimateElevation || estimateElevation && _estHeight >= 0.0f)
             _characterController.Move(direction * Time.deltaTime);
-
     }
 
 }

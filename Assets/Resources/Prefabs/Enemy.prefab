@@ -149,22 +149,22 @@ MonoBehaviour:
   estRayTimer: 1
   floatHeight: 0
   huntingTimer: 5
-  moveableRadius: 200
+  moveableRadius: 20
   on: 1
   pauseAtWaypoints: 0
   pauseMax: 3
   pauseMin: 1
-  randomSpeed: 10
+  randomSpeed: 7
   requireTarget: 1
   reversePatrol: 1
   rotationSpeed: 20
   runAway: 0
   runBufferDistance: 50
   runDistance: 25
-  runSpeed: 15
-  runTo: 0
+  runSpeed: 6
+  runTo: 1
   target: {fileID: 0}
   useWaypoints: 0
   visualRadius: 100
-  walkSpeed: 10
+  walkSpeed: 6
   waypoints: []
