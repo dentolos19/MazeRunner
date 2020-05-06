@@ -8,97 +8,95 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
 
-    private readonly float _antigravity = 2.0f; //force at which floating/flying enemies repel
+    private const float Antigravity = 2.0f;
 
-    public float attackRange = 10.0f; //How close does the enemy need to be in order to attack?
+    public float attackRange = 10.0f;
 
-    public float attackTime = 0.50f; //How frequent or fast an enemy can attack (cool down time).
+    public float attackTime = 0.50f;
 
-    public bool canFly; //Flying alters float behavior to ignore gravity. The enemy will fly up or down only to sustain floatHeight level.
+    public bool canFly;
 
-    private CharacterController _characterController; //CC used for enemy movement and etc.
+    private CharacterController _characterController;
 
-    private bool _enemyCanAttack; //Used to determine if the enemy is within range to attack, regardless of moving or not.
+    private bool _enemyCanAttack;
 
-    private bool _enemyIsAttacking; //An attack interuption method.
+    private bool _enemyIsAttacking;
 
-    private int _estCheckDirection; //used to determine if AI is falling or not when estimating elevation.
+    private int _estCheckDirection;
 
-    private float _estGravityTimer; //floating/flying creatures using estimated elevation will use this to actually monitor time values.
+    private float _estGravityTimer;
 
-    private float _estHeight; //floating/flying creatures using estimated elevation use this to estimate height necessities and gravity impacts.
+    private float _estHeight;
 
-    public bool estimateElevation; //This implements a pause between raycasts for heights and guestimates the need to move up/down in height based on the previous raycast.
+    public bool estimateElevation;
 
-    public float estRayTimer = 1.0f; //The amount of time in seconds between raycasts for gravity and elevation checks.
+    public float estRayTimer = 1.0f;
 
-    private bool _executeBufferState; //Smooth AI buffer for runAway AI. Also used as a speed control variable.
+    private bool _executeBufferState;
 
-    public float floatHeight; //If it can fly/hover, you need to let the AI know how high off the ground it should be.
+    public float floatHeight;
 
-    private bool _go = true; //An on/off override variable
+    private bool _go = true;
 
-    private readonly float gravity = 20.0f; //force of gravity pulling the enemy down.
+    private readonly float _gravity = Physics.gravity.y;
 
-    public float huntingTimer = 5.0f; //Search for player timer in seconds. Minimum of 0.1
+    public float huntingTimer = 5.0f;
 
-    //private script handled variables
+    private bool _initialGo;
 
-    private bool _initialGo; //AI cannot function until it is initialized.
+    private float _lastShotFired;
 
-    private float _lastShotFired; //Used in conjuction with attackTime to monitor attack durations.
+    private Vector3 _lastVisTargetPos;
 
-    private Vector3 _lastVisTargetPos; //Monitor target position if we lose sight of target. provides semi-intelligent AI.
+    private float _lostPlayerTimer;
 
-    private float _lostPlayerTimer; //Used for hunting down the player.
+    private bool _monitorRunTo;
 
-    private bool _monitorRunTo; //when AI is set to runTo, they will charge in, and then not charge again to after far enough away.
-
-    public float moveableRadius = 200.0f; //If the player is too far away, the AI will auto-matically shut down. Set to 0 to remove this limitation.
+    public float moveableRadius = 100;
     
-    public bool on = true; //Is the AI active? this can be used to place pre-set enemies in you scene.
+    public bool on = true;
 
-    public bool pauseAtWaypoints; //if true, patrol units will pause momentarily at each waypoint as they reach them.
+    public bool pauseAtWaypoints;
 
-    public float pauseMax = 3.0f; //If pauseAtWaypoints is true, the unit will pause momentarily formaximum of this time.
+    public float pauseMax = 3;
 
-    public float pauseMin = 1.0f; //If pauseAtWaypoints is true, the unit will pause momentarily for minmum of this time.
+    public float pauseMin = 1;
 
-    private bool _pauseWpControl; //makes sure unit pauses appropriately.
+    private bool _pauseWpControl;
 
-    private bool _playerHasBeenSeen; //An enhancement to how the AI functions prior to visibly seeing the target. Brings AI to life when target is close, but not visible.
+    private bool _playerHasBeenSeen;
 
-    private Vector3 _randomDirection; //Random movement behaviour setting.
+    private Vector3 _randomDirection;
 
-    private float _randomDirectionTimer; //Random movement behaviour tracking.
+    private float _randomDirectionTimer;
+    
+    public int randomSpeed = 7;
 
-    public int randomSpeed = 10; //Movement speed if the AI is moving in random directions.
+    public bool requireTarget = true;
 
-    public bool requireTarget = true; //Waypoint ONLY functionality (still can fly and hover).
+    public bool reversePatrol = true;
 
-    public bool reversePatrol = true; //if true, patrol units will walk forward and backward along their patrol.
+    public float rotationSpeed = 20;
 
-    public float rotationSpeed = 20.0f; //Rotation during movement modifier. If AI starts spinning at random, increase this value. (First check to make sure it's not due to visual radius limitations)
+    public bool runAway;
 
-    public bool runAway; //Is it the goal of this AI to keep it's distance? If so, it needs to have runaway active.
+    public float runBufferDistance = 50;
 
-    public float runBufferDistance = 50.0f; //Smooth AI buffer. How far apart does AI/Target need to be before the run reason is ended.
+    public float runDistance = 25;
 
-    public float runDistance = 25.0f; //If the enemy should keep its distance, or charge in, at what point should they begin to run?
+    public int runSpeed = 7;
 
-    public int runSpeed = 15; //Movement speed if it needs to run.
+    public bool runTo;
 
-    public bool runTo; //Opposite to runaway, within a certain distance, the enemy will run toward the target.
+    private bool _smoothAttackRangeBuffer;
 
-    private bool _smoothAttackRangeBuffer; //for runAway AI to not be so messed up by their visual radius and attack range.
+    public Transform target;
 
-    public Transform target; //The target, or whatever the AI is looking for.
-
-    private bool _targetIsOutOfSight; //Player tracking overload prevention. Makes sure we do not call the same coroutines over and over.
+    private bool _targetIsOutOfSight;
 
     public bool useWaypoints;
 
-    public float visualRadius = 100.0f;
+    public float visualRadius = 100;
 
     private bool _walkInRandomDirection;
 
@@ -551,7 +549,7 @@ public class EnemyAi : MonoBehaviour
         direction = forward * speed * speedModifier;
 
         if (!canFly && floatHeight <= 0.0f)
-            direction.y -= gravity;
+            direction.y -= _gravity;
 
         _characterController.Move(direction * Time.deltaTime);
 
@@ -617,7 +615,7 @@ public class EnemyAi : MonoBehaviour
 
                     case 1:
 
-                        direction.y += _antigravity;
+                        direction.y += Antigravity;
 
                         _estHeight -= direction.y * Time.deltaTime;
 
@@ -625,7 +623,7 @@ public class EnemyAi : MonoBehaviour
 
                     case 2:
 
-                        direction.y -= gravity;
+                        direction.y -= _gravity;
 
                         _estHeight -= direction.y * Time.deltaTime;
 
@@ -643,10 +641,10 @@ public class EnemyAi : MonoBehaviour
                 {
 
                     if (floatCheck.distance < floatHeight)
-                        direction.y += _antigravity;
+                        direction.y += Antigravity;
 
                 }
-                else { direction.y -= gravity; }
+                else { direction.y -= _gravity; }
 
             }
 
@@ -696,7 +694,7 @@ public class EnemyAi : MonoBehaviour
 
                     case 1:
 
-                        direction.y += _antigravity;
+                        direction.y += Antigravity;
 
                         _estHeight -= direction.y * Time.deltaTime;
 
@@ -704,7 +702,7 @@ public class EnemyAi : MonoBehaviour
 
                     case 2:
 
-                        direction.y -= _antigravity;
+                        direction.y -= Antigravity;
 
                         _estHeight -= direction.y * Time.deltaTime;
 
@@ -722,9 +720,9 @@ public class EnemyAi : MonoBehaviour
                 {
 
                     if (floatCheck.distance < floatHeight - 0.5f)
-                        direction.y += _antigravity;
+                        direction.y += Antigravity;
                     else if (floatCheck.distance > floatHeight + 0.5f)
-                        direction.y -= _antigravity;
+                        direction.y -= Antigravity;
 
                 }
 
