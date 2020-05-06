@@ -6,10 +6,14 @@ using UnityEngine;
 public class PlayerInterface : MonoBehaviour
 {
 
+    private bool _isPauseScreenShowing;
     private Stopwatch _timer;
     
     public TextMeshProUGUI compass;
     public TextMeshProUGUI timer;
+
+    public GameObject endScreen;
+    public GameObject pauseScreen;
 
     private void Awake()
     {
@@ -27,6 +31,31 @@ public class PlayerInterface : MonoBehaviour
         var direction = GetDirectionFromDouble(value);
         compass.text = $"{value}º | {direction}";
         timer.text = _timer.Elapsed.Minutes > 0 ? $"{_timer.Elapsed.Minutes}mins {_timer.Elapsed.Seconds}secs" : $"{_timer.Elapsed.Seconds}secs";
+        if (Input.GetKeyDown(KeyCode.Tab))
+            TogglePause();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Goal"))
+            return;
+        endScreen.SetActive(true);
+    }
+    
+    private void TogglePause()
+    {
+        _isPauseScreenShowing = !_isPauseScreenShowing;
+        pauseScreen.SetActive(_isPauseScreenShowing);
+        if (_isPauseScreenShowing)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Time.timeScale = 1;
+        }
     }
 
     private static string GetDirectionFromDouble(double value)
