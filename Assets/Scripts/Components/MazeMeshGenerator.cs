@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿// Credits to Joseph Hocking (From raywenderlich.com)
+// https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
+
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MazeMeshGenerator

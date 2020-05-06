@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Credits to Joseph Hocking (From raywenderlich.com)
+// https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
+
+using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -36,7 +39,7 @@ public class MazeGenerator : MonoBehaviour
         var meshColldier = maze.AddComponent<MeshCollider>();
         meshColldier.sharedMesh = meshFilter.mesh;
         var meshRenderer = maze.AddComponent<MeshRenderer>();
-        meshRenderer.materials = new Material[2] { floorMaterial, wallMaterial };
+        meshRenderer.materials = new[] { floorMaterial, wallMaterial };
     }
 
     private void Generate(int value)

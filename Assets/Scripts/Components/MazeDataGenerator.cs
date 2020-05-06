@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Credits to Joseph Hocking (From raywenderlich.com)
+// https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
+
+using UnityEngine;
 
 public class MazeDataGenerator
 {
