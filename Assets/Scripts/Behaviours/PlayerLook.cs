@@ -5,9 +5,9 @@ public class PlayerLook : MonoBehaviour
 
     private float _senstivity;
     private float _xRotation;
-    
+
     public Transform body;
-    
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -23,5 +23,5 @@ public class PlayerLook : MonoBehaviour
         transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
         body.Rotate(Vector3.up * x);
     }
-
+    
 }

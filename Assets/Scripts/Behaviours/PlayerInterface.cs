@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
 
 public class PlayerInterface : MonoBehaviour
 {
 
-    private SpeedTimer _timer;
+    private Stopwatch _timer;
     
     public TextMeshProUGUI compass;
     public TextMeshProUGUI timer;
 
     private void Awake()
     {
-        _timer = gameObject.AddComponent<SpeedTimer>();
+        _timer = new Stopwatch();
     }
 
     private void Start()
@@ -25,7 +26,7 @@ public class PlayerInterface : MonoBehaviour
         var value = Math.Round(transform.localEulerAngles.y);
         var direction = GetDirectionFromDouble(value);
         compass.text = $"{value}º | {direction}";
-        timer.text = _timer.Elasped.Minutes > 0 ? $"{_timer.Elasped.Minutes} mins {_timer.Elasped.Seconds} secs" : $"{_timer.Elasped.Seconds} secs";
+        timer.text = _timer.Elapsed.Minutes > 0 ? $"{_timer.Elapsed.Minutes}mins {_timer.Elapsed.Seconds}secs" : $"{_timer.Elapsed.Seconds}secs";
     }
 
     private static string GetDirectionFromDouble(double value)

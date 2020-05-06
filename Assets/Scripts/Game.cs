@@ -4,8 +4,9 @@ using UnityEngine.Advertisements;
 public static class Game
 {
 
+    public static bool IsMobilePlatform { get; private set; }
     public static Configuration Settings { get; private set; }
-    
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Startup()
     {
@@ -20,6 +21,7 @@ public static class Game
                 Advertisement.Initialize("3586539");
                 break;
         }
+        IsMobilePlatform = Application.isMobilePlatform;
     }
 
 }

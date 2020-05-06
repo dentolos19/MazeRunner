@@ -4,8 +4,8 @@ using UnityEngine;
 public class MazeMeshGenerator
 {
 
-    private const float Width = 3;
-    private const float Height = 3;
+    public const float Width = 3;
+    public const float Height = 3;
 
     public Mesh FromData(int[,] data)
     {

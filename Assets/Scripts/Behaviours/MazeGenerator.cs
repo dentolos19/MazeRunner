@@ -10,6 +10,9 @@ public class MazeGenerator : MonoBehaviour
     public Material floorMaterial;
     public Material wallMaterial;
 
+    public Transform player;
+    public Transform goal;
+
     private void Awake()
     {
         _data = new[,] { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
@@ -47,6 +50,34 @@ public class MazeGenerator : MonoBehaviour
             Debug.LogWarning("Odd numbers works better for the maze.");
         _data = _dataGenerator.FromDimensions(rows, column);
         GenerateMesh(_data);
+        SetPlayerPosition(_data);
+        SetGoalPosition(_data);
+    }
+
+    private void SetPlayerPosition(int[,] data)
+    {
+        var rowMax = data.GetUpperBound(0);
+        var columnMax = data.GetUpperBound(1);
+        for (var ri = 0; ri <= rowMax; ri++)
+            for (var ci = 0; ci <= columnMax; ci++)
+                if (data[ri, ci] == 0)
+                {
+                    player.position = new Vector3(ci * MazeMeshGenerator.Width, 1, ri * MazeMeshGenerator.Width);
+                    return;
+                }
+    }
+
+    private void SetGoalPosition(int[,] data)
+    {
+        var rowMax = data.GetUpperBound(0);
+        var columnMax = data.GetUpperBound(1);
+        for (var ri = rowMax; ri >= 0; ri--)
+            for (var ci = columnMax; ci >= 0; ci--)
+                if (data[ri, ci] == 0)
+                {
+                    goal.position = new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
+                    return;
+                }
     }
 
 }
