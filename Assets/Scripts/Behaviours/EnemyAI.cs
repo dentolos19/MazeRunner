@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 public class EnemyAi : MonoBehaviour
 {
 
-    private const float Antigravity = 2.0f;
+    private const float Antigravity = 2;
 
     private readonly float _gravity = Physics.gravity.y;
 
@@ -72,7 +72,7 @@ public class EnemyAi : MonoBehaviour
 
     public float huntingTimer = 5.0f;
 
-    public float moveableRadius = 100;
+    public float moveableRadius = 20;
 
     public bool on = true;
 
@@ -96,9 +96,9 @@ public class EnemyAi : MonoBehaviour
 
     public float runDistance = 25;
 
-    public int runSpeed = 7;
+    public int runSpeed = 6;
 
-    public bool runTo;
+    public bool runTo = true;
 
     public Transform target;
 
@@ -106,7 +106,7 @@ public class EnemyAi : MonoBehaviour
 
     public float visualRadius = 100;
 
-    public int walkSpeed = 10;
+    public int walkSpeed = 6;
 
     public Transform[] waypoints;
 

@@ -8,7 +8,7 @@ public class Configuration
     private static readonly string Source = Path.Combine(Application.persistentDataPath, "RunAwayHarold.cfg");
     private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
-    public float sensitivity = 50;
+    public float Sensitivity { get; set; } = 50;
     
     public void Save()
     {

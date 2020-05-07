@@ -776,6 +776,6 @@ PlayerSettings:
   projectName: Run Away Harold
   organizationId: dentolos19
   cloudEnabled: 0
-  enableNativePlatformBackendsForNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 1
   disableOldInputManagerSupport: 0
   legacyClampBlendShapeWeights: 0

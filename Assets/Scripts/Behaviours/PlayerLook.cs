@@ -11,7 +11,7 @@ public class PlayerLook : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        _senstivity = Game.Settings.sensitivity * 10;
+        _senstivity = Game.Settings.Sensitivity * 10;
     }
 
     private void Update()
