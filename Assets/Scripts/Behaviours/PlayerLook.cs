@@ -5,7 +5,7 @@ public class PlayerLook : MonoBehaviour
 
     private float _senstivity;
     private float _xRotation;
-
+    
     public Transform body;
 
     private void Start()

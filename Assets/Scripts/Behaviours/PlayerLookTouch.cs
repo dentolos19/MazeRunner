@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerLookTouch : MonoBehaviour
 {
@@ -10,6 +9,8 @@ public class PlayerLookTouch : MonoBehaviour
     private Touch _touch;
     private Camera _camera;
     private Vector3 _original;
+
+    public RectTransform area;
 
     private void Start()
     {
@@ -27,10 +28,10 @@ public class PlayerLookTouch : MonoBehaviour
     {
         if (!Game.IsMobilePlatform)
             return;
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
         foreach (var touch in Input.touches)
         {
+            if (!area.rect.Contains(touch.position))
+                return;
             switch (touch.phase)
             {
                 case TouchPhase.Began:
