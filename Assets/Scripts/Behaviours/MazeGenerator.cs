@@ -10,11 +10,15 @@ public class MazeGenerator : MonoBehaviour
     private MazeDataGenerator _dataGenerator;
     private MazeMeshGenerator _meshGenerator;
 
+    public static WaveSettings Settings { get; } = new WaveSettings();
+
     public Material floorMaterial;
     public Material wallMaterial;
 
     public Transform player;
     public Transform goal;
+    public EnemyAi enemyPrefab;
+    public EnemyAi bossPrefab;
 
     private void Awake()
     {
@@ -78,7 +82,13 @@ public class MazeGenerator : MonoBehaviour
             for (var ci = columnMax; ci >= 0; ci--)
                 if (data[ri, ci] == 0)
                 {
-                    goal.position = new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
+                    var pos = new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
+                    goal.position = pos;
+                    enemyPrefab.target = player;
+                    for (var index = 0; index < Settings.enemyAmount; index++)
+                        Instantiate(enemyPrefab.gameObject, pos + Vector3.up * 0.5f, Quaternion.identity);
+                    if (Settings.enableBoss)
+                        Instantiate(bossPrefab.gameObject, pos + Vector3.up * 0.5f, Quaternion.identity);
                     return;
                 }
     }
