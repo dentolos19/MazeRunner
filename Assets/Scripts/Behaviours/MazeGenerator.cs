@@ -59,6 +59,7 @@ public class MazeGenerator : MonoBehaviour
         GenerateMesh(_data);
         SetPlayerPosition(_data);
         SetGoalPosition(_data);
+        SetMazeWave(_data);
     }
 
     private void SetPlayerPosition(int[,] data)
@@ -82,15 +83,31 @@ public class MazeGenerator : MonoBehaviour
             for (var ci = columnMax; ci >= 0; ci--)
                 if (data[ri, ci] == 0)
                 {
-                    var pos = new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
-                    goal.position = pos;
-                    enemyPrefab.target = player;
-                    for (var index = 0; index < Settings.enemyAmount; index++)
-                        Instantiate(enemyPrefab.gameObject, pos + Vector3.up * 0.5f, Quaternion.identity);
-                    if (Settings.enableBoss)
-                        Instantiate(bossPrefab.gameObject, pos + Vector3.up * 0.5f, Quaternion.identity);
+                    goal.position = new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
                     return;
                 }
+    }
+
+    private void SetMazeWave(int[,] data)
+    {
+        enemyPrefab.target = player;
+        if (Settings.enableBoss)
+            Instantiate(bossPrefab.gameObject, GenerateRandomCords(data) + Vector3.up * 0.5f, Quaternion.identity);
+        for (var index = 0; index < Settings.enemyAmount; index++)
+            Instantiate(enemyPrefab.gameObject, GenerateRandomCords(data) + Vector3.up * 0.5f, Quaternion.identity);
+    }
+    
+    private Vector3 GenerateRandomCords(int[,] data)
+    {
+        var rowMax = data.GetUpperBound(0);
+        var columnMax = data.GetUpperBound(1);
+        var rowRad = Random.Range(0, rowMax);
+        var columnRad = Random.Range(0, columnMax);
+        for (var ri = rowRad; ri >= 0; ri--)
+            for (var ci = columnRad; ci >= 0; ci--)
+                if (data[ri, ci] == 0)
+                    return new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
+        return new Vector3();
     }
 
 }
