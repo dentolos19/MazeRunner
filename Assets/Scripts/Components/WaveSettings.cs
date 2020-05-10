@@ -1,7 +1,8 @@
 ﻿public class WaveSettings
 {
 
-    public int enemyAmount = 2;
-    public bool enableBoss = false;
+    public int MazeSize { get; set; }= 63;
+    public int EnemyAmount { get; set; }= 2;
+    public bool EnableBoss { get; set; } = false;
 
 }

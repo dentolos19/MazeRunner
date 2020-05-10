@@ -1693,7 +1693,8 @@ MonoBehaviour:
   goal: {fileID: 356227491}
   enemyPrefab: {fileID: 1132268689901565202, guid: ede2dc1f21a7ae24b87c20e1dece489c,
     type: 3}
-  bossPrefab: {fileID: 0}
+  bossPrefab: {fileID: 1751800956029969652, guid: 1d570203797ad84449f0635c4cc9a923,
+    type: 3}
 --- !u!4 &1478370521
 Transform:
   m_ObjectHideFlags: 0

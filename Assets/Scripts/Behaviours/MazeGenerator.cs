@@ -10,7 +10,7 @@ public class MazeGenerator : MonoBehaviour
     private MazeDataGenerator _dataGenerator;
     private MazeMeshGenerator _meshGenerator;
 
-    public static WaveSettings Settings { get; } = new WaveSettings();
+    public static WaveSettings Settings { get; set; } = new WaveSettings();
 
     public Material floorMaterial;
     public Material wallMaterial;
@@ -29,7 +29,7 @@ public class MazeGenerator : MonoBehaviour
 
     private void Start()
     {
-        Generate(63);
+        Generate(Settings.MazeSize);
     }
 
     private void GenerateMesh(int[,] data)
@@ -91,18 +91,19 @@ public class MazeGenerator : MonoBehaviour
     private void SetMazeWave(int[,] data)
     {
         enemyPrefab.target = player;
-        if (Settings.enableBoss)
-            Instantiate(bossPrefab.gameObject, GenerateRandomCords(data) + Vector3.up * 0.5f, Quaternion.identity);
-        for (var index = 0; index < Settings.enemyAmount; index++)
-            Instantiate(enemyPrefab.gameObject, GenerateRandomCords(data) + Vector3.up * 0.5f, Quaternion.identity);
+        bossPrefab.target = player;
+        if (Settings.EnableBoss)
+            Instantiate(bossPrefab, GenerateRandomCords(data) + Vector3.up * 0.5f, Quaternion.identity);
+        for (var index = 0; index < Settings.EnemyAmount; index++)
+            Instantiate(enemyPrefab, GenerateRandomCords(data) + Vector3.up * 0.5f, Quaternion.identity);
     }
     
-    private Vector3 GenerateRandomCords(int[,] data)
+    private Vector3 GenerateRandomCords(int[,] data, int minimum = 0)
     {
         var rowMax = data.GetUpperBound(0);
         var columnMax = data.GetUpperBound(1);
-        var rowRad = Random.Range(0, rowMax);
-        var columnRad = Random.Range(0, columnMax);
+        var rowRad = Random.Range(minimum, rowMax);
+        var columnRad = Random.Range(minimum, columnMax);
         for (var ri = rowRad; ri >= 0; ri--)
             for (var ci = columnRad; ci >= 0; ci--)
                 if (data[ri, ci] == 0)
