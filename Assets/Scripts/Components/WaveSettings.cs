@@ -3,8 +3,8 @@
     
     public enum PresetDifficulty { Easy, Normal, Hard, Impossible }
 
-    public int MazeSize { get; private set; } = 10;
-    public int EnemyAmount { get; private set; } = 63;
+    public int MazeSize { get; private set; } = 95;
+    public int EnemyAmount { get; private set; } = 61;
     public bool EnableBoss { get; private set; } = true;
     
     public void SetPreset(PresetDifficulty preset)
@@ -12,25 +12,25 @@
         switch (preset)
         {
             case PresetDifficulty.Easy:
-                MazeSize = 15;
+                MazeSize = 45;
                 EnemyAmount = 5;
                 EnableBoss = false;
                 break;
             case PresetDifficulty.Normal:
                 goto default;
             case PresetDifficulty.Hard:
-                MazeSize = 31;
-                EnemyAmount = 20;
+                MazeSize = 65;
+                EnemyAmount = 25;
                 EnableBoss = false;
                 break;
             case PresetDifficulty.Impossible:
-                MazeSize = 41;
-                EnemyAmount = 25;
+                MazeSize = 75;
+                EnemyAmount = 35;
                 EnableBoss = true;
                 break;
             default:
-                MazeSize = 21;
-                EnemyAmount = 10;
+                MazeSize = 55;
+                EnemyAmount = 15;
                 EnableBoss = false;
                 break;
         }

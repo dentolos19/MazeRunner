@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public class StartFunctions : MonoBehaviour
 {
 
     public Slider optionsSensitivity;
-    public Dropdown startDifficulty;
+    public TMP_Dropdown startDifficulty;
     
     private void Start()
     {
@@ -31,6 +32,7 @@ public class StartFunctions : MonoBehaviour
                 settings.SetPreset(WaveSettings.PresetDifficulty.Impossible);
                 break;
         }
+        MazeGenerator.Settings = settings;
         SceneManager.LoadScene("Maze");
     }
 

@@ -678,6 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsSensitivity: {fileID: 1424888957}
+  startDifficulty: {fileID: 120249070}
 --- !u!1 &141119975
 GameObject:
   m_ObjectHideFlags: 0
