@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8587972079830205722}
   - component: {fileID: 8587972079830205720}
   - component: {fileID: 8587972079830205723}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 8587972081248181277}
   - component: {fileID: 8587972081248181276}
   - component: {fileID: 1751800956029969652}
-  m_Layer: 0
+  - component: {fileID: 998192626761205000}
+  m_Layer: 8
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,17 +155,35 @@ MonoBehaviour:
   pauseAtWaypoints: 0
   pauseMax: 3
   pauseMin: 1
-  randomSpeed: 7
+  randomSpeed: 6
   requireTarget: 1
   reversePatrol: 1
   rotationSpeed: 20
   runAway: 0
   runBufferDistance: 50
   runDistance: 25
-  runSpeed: 6
+  runSpeed: 5
   runTo: 1
   target: {fileID: 0}
   useWaypoints: 0
   visualRadius: 100
-  walkSpeed: 6
+  walkSpeed: 5
   waypoints: []
+--- !u!114 &998192626761205000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8587972081248181267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0ccc2afa29c74bb83c846bb66291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  damagePerSecond: 5
+  range: 1
+  layer:
+    serializedVersion: 2
+    m_Bits: 512

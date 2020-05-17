@@ -15,6 +15,7 @@ public class PlayerInterface : MonoBehaviour
 
 	public GameObject endScreen;
 	public GameObject pauseScreen;
+	public GameObject deathScreen;
 	public TextMeshProUGUI timer;
 
 	private void Awake()
@@ -65,6 +66,14 @@ public class PlayerInterface : MonoBehaviour
 			_timer.Start();
 			Time.timeScale = 1;
 		}
+	}
+
+	public void ShowDeathScreen()
+	{
+		Cursor.lockState = CursorLockMode.None;
+		_timer.Stop();
+		_gameHasEnded = true;
+		deathScreen.SetActive(true);
 	}
 
 	private static string GetDirectionFromDouble(double value)

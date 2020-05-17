@@ -95,7 +95,7 @@ public class MazeGenerator : MonoBehaviour
 		if (Settings.EnableBoss)
 			Instantiate(bossPrefab, GenerateRandomCords(data, 10), Quaternion.identity);
 		for (var index = 0; index < Settings.EnemyAmount; index++)
-			Instantiate(enemyPrefab, GenerateRandomCords(data, 10), Quaternion.identity);
+			Instantiate(enemyPrefab, GenerateRandomCords(data, 3), Quaternion.identity);
 	}
 
 	private Vector3 GenerateRandomCords(int[,] data, int minimum = 0)
@@ -107,7 +107,7 @@ public class MazeGenerator : MonoBehaviour
 		for (var ri = rowRad; ri >= 0; ri--)
 			for (var ci = columnRad; ci >= 0; ci--)
 				if (data[ri, ci] == 0)
-					return new Vector3(ci * MazeMeshGenerator.Width, 0.5f, ri * MazeMeshGenerator.Width);
+					return new Vector3(ci * MazeMeshGenerator.Width, 1, ri * MazeMeshGenerator.Width);
 		return new Vector3();
 	}
 

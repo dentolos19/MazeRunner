@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1132268688657206781}
   - component: {fileID: 1132268688657206771}
   - component: {fileID: 1132268688657206780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   - component: {fileID: 1132268689901565200}
   - component: {fileID: 1132268689901565201}
   - component: {fileID: 1132268689901565202}
-  m_Layer: 0
+  - component: {fileID: 7136308958309229358}
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,17 +155,35 @@ MonoBehaviour:
   pauseAtWaypoints: 0
   pauseMax: 3
   pauseMin: 1
-  randomSpeed: 7
+  randomSpeed: 5
   requireTarget: 1
   reversePatrol: 1
   rotationSpeed: 20
   runAway: 0
   runBufferDistance: 50
   runDistance: 25
-  runSpeed: 6
+  runSpeed: 4
   runTo: 1
   target: {fileID: 0}
   useWaypoints: 0
   visualRadius: 100
-  walkSpeed: 5
+  walkSpeed: 4
   waypoints: []
+--- !u!114 &7136308958309229358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132268689901565203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0ccc2afa29c74bb83c846bb66291d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  damagePerSecond: 3
+  range: 1
+  layer:
+    serializedVersion: 2
+    m_Bits: 512

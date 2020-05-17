@@ -3,8 +3,8 @@
 
 	public enum PresetDifficulty { Easy, Normal, Hard, Impossible }
 
-	public int MazeSize { get; private set; } = 65;
-	public int EnemyAmount { get; private set; } = 20;
+	public int MazeSize { get; private set; } = 15;
+	public int EnemyAmount { get; private set; } = 2;
 	public bool EnableBoss { get; private set; } = true;
 
 	public void SetPreset(PresetDifficulty preset)
