@@ -18,9 +18,9 @@ public class PlayerControls : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.F))
 			ToggleFlashlight();
-		if (Input.GetKeyDown(KeyCode.LeftControl))
+		if (Input.GetKeyDown(KeyCode.LeftShift))
 			ToggleSprint(true);
-		if (Input.GetKeyUp(KeyCode.LeftControl))
+		if (Input.GetKeyUp(KeyCode.LeftShift))
 			ToggleSprint(false);
 	}
 

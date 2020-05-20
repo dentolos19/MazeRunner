@@ -70,7 +70,7 @@ public class MazeGenerator : MonoBehaviour
 			for (var ci = 0; ci <= columnMax; ci++)
 				if (data[ri, ci] == 0)
 				{
-					player.position = new Vector3(ci * MazeMeshGenerator.Width, 1, ri * MazeMeshGenerator.Width);
+					player.position = new Vector3(ci * MazeMeshGenerator.Width, 0, ri * MazeMeshGenerator.Width);
 					return;
 				}
 	}
