@@ -6,7 +6,7 @@ public class PlayerLookMobile : MonoBehaviour
 	private Camera _camera;
 	private Vector3 _original;
 	private float _sensitivity;
-	private Touch _touch;
+	private Vector3 _touchPos;
 
 	private float _xRotation;
 	private float _yRotation;
@@ -22,7 +22,7 @@ public class PlayerLookMobile : MonoBehaviour
 			_original = _camera.transform.eulerAngles;
 		_xRotation = _original.x;
 		_yRotation = _original.y;
-		_sensitivity = Game.Settings.Sensitivity / 10;
+		_sensitivity = Game.Settings.Sensitivity / 100;
 	}
 
 	private void FixedUpdate()
@@ -31,17 +31,18 @@ public class PlayerLookMobile : MonoBehaviour
 			return;
 		foreach (var touch in Input.touches)
 		{
-			if (!area.rect.Contains(touch.position))
+			var pos = _camera.ScreenToWorldPoint(touch.position);
+			if (!area.rect.Contains(pos))
 				return;
 			switch (touch.phase)
 			{
 				case TouchPhase.Began:
-					_touch = touch;
+					_touchPos = pos;
 					break;
 				case TouchPhase.Moved:
 				{
-					var x = _touch.position.x - touch.position.x;
-					var y = _touch.position.y - touch.position.y;
+					var x = _touchPos.x - pos.x;
+					var y = _touchPos.y - pos.y;
 					_xRotation -= y * _sensitivity * Time.deltaTime * -1;
 					_yRotation += x * _sensitivity * Time.deltaTime * -1;
 					_yRotation = Mathf.Clamp(_yRotation, -90, 90);
@@ -49,7 +50,7 @@ public class PlayerLookMobile : MonoBehaviour
 					break;
 				}
 				case TouchPhase.Ended:
-					_touch = new Touch();
+					_touchPos = new Vector2();
 					break;
 			}
 		}
