@@ -6,55 +6,33 @@ using UnityEngine;
 public class PlayerInterface : MonoBehaviour
 {
 
-	private bool _gameHasEnded;
-
-	private bool _isPauseScreenShowing;
 	private Stopwatch _timer;
-
+	
 	public TextMeshProUGUI compass;
-
-	public GameObject endScreen;
-	public GameObject pauseScreen;
-	public GameObject deathScreen;
 	public TextMeshProUGUI timer;
 
-	private void Awake()
-	{
-		_timer = new Stopwatch();
-	}
-
+	private bool _screenIsUp;
+	
+	public GameObject pauseScreen;
+	public GameObject deathScreen;
+	public GameObject winnerScreen;
+	
 	private void Start()
 	{
+		_timer = new Stopwatch();
 		_timer.Start();
 	}
-
+	
 	private void Update()
 	{
-		var value = Math.Round(transform.localEulerAngles.y);
-		var direction = GetDirectionFromDouble(value);
-		compass.text = $"{value}º | {direction}";
+		var direction = (float)Math.Round(transform.localEulerAngles.y);
+		compass.text = $"{direction}º | {GetPoleDirection(direction)}";
 		timer.text = _timer.Elapsed.Minutes > 0 ? $"{_timer.Elapsed.Minutes}mins {_timer.Elapsed.Seconds}secs" : $"{_timer.Elapsed.Seconds}secs";
-		if (Input.GetKeyDown(KeyCode.Tab))
-			TogglePause();
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void PauseEntireGame(bool activate)
 	{
-		if (!other.CompareTag("Goal"))
-			return;
-		Cursor.lockState = CursorLockMode.None;
-		_timer.Stop();
-		_gameHasEnded = true;
-		endScreen.SetActive(true);
-	}
-
-	private void TogglePause()
-	{
-		if (_gameHasEnded)
-			return;
-		_isPauseScreenShowing = !_isPauseScreenShowing;
-		pauseScreen.SetActive(_isPauseScreenShowing);
-		if (_isPauseScreenShowing)
+		if (activate)
 		{
 			Cursor.lockState = CursorLockMode.None;
 			_timer.Stop();
@@ -67,16 +45,35 @@ public class PlayerInterface : MonoBehaviour
 			Time.timeScale = 1;
 		}
 	}
-
-	public void ShowDeathScreen()
+	
+	public void TogglePauseScreen()
 	{
-		Cursor.lockState = CursorLockMode.None;
-		_timer.Stop();
-		_gameHasEnded = true;
-		deathScreen.SetActive(true);
+		if (_screenIsUp && !pauseScreen.activeSelf)
+			return;
+		pauseScreen.SetActive(!pauseScreen.activeSelf);
+		_screenIsUp = pauseScreen.activeSelf;
+		PauseEntireGame(_screenIsUp);
 	}
 
-	private static string GetDirectionFromDouble(double value)
+	public void ToggleDeathScreen()
+	{
+		if (_screenIsUp && !deathScreen.activeSelf)
+			return;
+		deathScreen.SetActive(!deathScreen.activeSelf);
+		_screenIsUp = deathScreen.activeSelf;
+		PauseEntireGame(_screenIsUp);
+	}
+
+	public void ToggleWinnerScreen()
+	{
+		if (_screenIsUp && !winnerScreen.activeSelf)
+			return;
+		winnerScreen.SetActive(!winnerScreen.activeSelf);
+		_screenIsUp = winnerScreen.activeSelf;
+		PauseEntireGame(_screenIsUp);
+	}
+	
+	private static string GetPoleDirection(float value)
 	{
 		var direction = string.Empty;
 		if (value >= 0)

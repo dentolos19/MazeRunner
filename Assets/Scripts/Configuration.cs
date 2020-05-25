@@ -14,6 +14,7 @@ public class Configuration
 	{
 		var stream = new FileStream(Source, FileMode.Create);
 		Serializer.Serialize(stream, this);
+		stream.Close();
 	}
 
 	public static Configuration Load()
@@ -21,7 +22,7 @@ public class Configuration
 		if (!File.Exists(Source))
 			return new Configuration();
 		var stream = new FileStream(Source, FileMode.Open);
-		var result = Serializer.Deserialize(stream) as Configuration;
+		var result = (Configuration)Serializer.Deserialize(stream);
 		stream.Close();
 		return result;
 	}

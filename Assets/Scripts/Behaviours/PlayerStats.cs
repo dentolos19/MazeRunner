@@ -1,35 +1,22 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(PlayerInterface))]
 public class PlayerStats : MonoBehaviour
 {
 
-	private int _health;
 	private PlayerInterface _interface;
 	
-	public int maxHealth = 100;
-	public TextMeshProUGUI healthText;
+	public int health = 100;
 
-	private void Start()
+	private void Awake()
 	{
-		_health = maxHealth;
 		_interface = GetComponent<PlayerInterface>();
 	}
-
-	private void Update()
+	
+	private void OnTriggerEnter(Collider other)
 	{
-		if (_health >= 1)
-			return;
-		_interface.ShowDeathScreen();
-	}
-
-	public void RecieveDamage(int damage)
-	{
-		if (_health <= 0)
-			return;
-		_health -= damage;
-		healthText.text = $"{_health}%";
+		if (other.CompareTag("Finish"))
+			_interface.ToggleWinnerScreen();
 	}
 
 }

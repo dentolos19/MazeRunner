@@ -1,3 +1,3 @@
 # Run Away Harold: The Dark Lord
 
-This game was conceived from an horror games and mazes. To learn more about this project, click the link above.
+This game was made just for the learning experience. To learn more about this project, click the link above.

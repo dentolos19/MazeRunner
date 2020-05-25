@@ -7,10 +7,7 @@ using UnityEngine;
 public class MazeMeshGenerator
 {
 
-	public const float Width = 3;
-	public const float Height = 3;
-
-	public Mesh FromData(int[,] data)
+	public Mesh Generate(int[,] data, float width, float height)
 	{
 		var maze = new Mesh();
 		var mazeVertices = new List<Vector3>();
@@ -20,21 +17,21 @@ public class MazeMeshGenerator
 		var wallTriangles = new List<int>();
 		var rowMax = data.GetUpperBound(0);
 		var columnMax = data.GetUpperBound(1);
-		var halfHeight = Height * 0.5f;
+		var halfHeight = height * 0.5f;
 		for (var ri = 0; ri <= rowMax; ri++)
 			for (var ci = 0; ci <= columnMax; ci++)
 				if (data[ri, ci] != 1)
 				{
-					CreateQuad(Matrix4x4.TRS(new Vector3(ci * Width, 0, ri * Width), Quaternion.LookRotation(Vector3.up), new Vector3(Width, Width, 1)), ref mazeVertices, ref mazeUVs, ref floorTriangles);
-					CreateQuad(Matrix4x4.TRS(new Vector3(ci * Width, Height, ri * Width), Quaternion.LookRotation(Vector3.down), new Vector3(Width, Width, 1)), ref mazeVertices, ref mazeUVs, ref floorTriangles);
+					Create(Matrix4x4.TRS(new Vector3(ci * width, 0, ri * width), Quaternion.LookRotation(Vector3.up), new Vector3(width, width, 1)), ref mazeVertices, ref mazeUVs, ref floorTriangles);
+					Create(Matrix4x4.TRS(new Vector3(ci * width, height, ri * width), Quaternion.LookRotation(Vector3.down), new Vector3(width, width, 1)), ref mazeVertices, ref mazeUVs, ref floorTriangles);
 					if (ri - 1 < 0 || data[ri - 1, ci] == 1)
-						CreateQuad(Matrix4x4.TRS(new Vector3(ci * Width, halfHeight, (ri - 0.5f) * Width), Quaternion.LookRotation(Vector3.forward), new Vector3(Width, Height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
+						Create(Matrix4x4.TRS(new Vector3(ci * width, halfHeight, (ri - 0.5f) * width), Quaternion.LookRotation(Vector3.forward), new Vector3(width, height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
 					if (ci + 1 > columnMax || data[ri, ci + 1] == 1)
-						CreateQuad(Matrix4x4.TRS(new Vector3((ci + .5f) * Width, halfHeight, ri * Width), Quaternion.LookRotation(Vector3.left), new Vector3(Width, Height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
+						Create(Matrix4x4.TRS(new Vector3((ci + .5f) * width, halfHeight, ri * width), Quaternion.LookRotation(Vector3.left), new Vector3(width, height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
 					if (ci - 1 < 0 || data[ri, ci - 1] == 1)
-						CreateQuad(Matrix4x4.TRS(new Vector3((ci - .5f) * Width, halfHeight, ri * Width), Quaternion.LookRotation(Vector3.right), new Vector3(Width, Height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
+						Create(Matrix4x4.TRS(new Vector3((ci - .5f) * width, halfHeight, ri * width), Quaternion.LookRotation(Vector3.right), new Vector3(width, height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
 					if (ri + 1 > rowMax || data[ri + 1, ci] == 1)
-						CreateQuad(Matrix4x4.TRS(new Vector3(ci * Width, halfHeight, (ri + .5f) * Width), Quaternion.LookRotation(Vector3.back), new Vector3(Width, Height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
+						Create(Matrix4x4.TRS(new Vector3(ci * width, halfHeight, (ri + .5f) * width), Quaternion.LookRotation(Vector3.back), new Vector3(width, height, 1)), ref mazeVertices, ref mazeUVs, ref wallTriangles);
 				}
 		maze.vertices = mazeVertices.ToArray();
 		maze.uv = mazeUVs.ToArray();
@@ -43,8 +40,8 @@ public class MazeMeshGenerator
 		maze.RecalculateNormals();
 		return maze;
 	}
-
-	private void CreateQuad(Matrix4x4 matrix, ref List<Vector3> newVertices, ref List<Vector2> newUVs, ref List<int> newTriangles)
+	
+	private void Create(Matrix4x4 matrix, ref List<Vector3> newVertices, ref List<Vector2> newUVs, ref List<int> newTriangles)
 	{
 		var index = newVertices.Count;
 		var vertice1 = new Vector3(-0.5f, -0.5f, 0);
@@ -66,5 +63,5 @@ public class MazeMeshGenerator
 		newTriangles.Add(index + 2);
 		newTriangles.Add(index);
 	}
-
+	
 }
