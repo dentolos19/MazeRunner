@@ -6,6 +6,7 @@ public class PlayerStats : MonoBehaviour
 {
 
 	private int _health;
+	private bool _isDead;
 	private PlayerInterface _interface;
 
 	public int maxHealth = 100;
@@ -19,13 +20,7 @@ public class PlayerStats : MonoBehaviour
 	private void Start()
 	{
 		_health = maxHealth;
-	}
-
-	private void Update()
-	{
-		healthText.text = _health.ToString();
-		if (_health <= 0)
-			_interface.ToggleDeathScreen();
+		_isDead = false;
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -37,6 +32,9 @@ public class PlayerStats : MonoBehaviour
 	public void Damage(int amount)
 	{
 		_health -= amount;
+		healthText.text = _health.ToString() + "%";
+		if (_health <= 0 && !_isDead)
+			_interface.ToggleDeathScreen();
 	}
 
 }

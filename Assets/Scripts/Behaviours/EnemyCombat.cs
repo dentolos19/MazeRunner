@@ -5,19 +5,20 @@ public class EnemyCombat : MonoBehaviour
 
 	private float _damageCooldown;
 	
-	public int damage = 5;
+	public int maxDamage = 5;
+	public int minDamage = 2;
 	public float damagePerSecond = 3;
 	public float attackRadius = 1;
 
 	private void Update()
 	{
 		var colliders = Physics.OverlapSphere(transform.position, attackRadius);
-		foreach (var colldier in colliders)
-			if (colldier.CompareTag("Player"))
+		foreach (var collider in colliders)
+			if (collider.CompareTag("Player"))
 			{
 				if (!(_damageCooldown <= 0))
 					continue;
-				colldier.GetComponent<PlayerStats>().Damage(damage);
+				collider.GetComponent<PlayerStats>().Damage(Random.Range(2, 5));
 				_damageCooldown = damagePerSecond;
 			}
 		_damageCooldown -= Time.deltaTime;

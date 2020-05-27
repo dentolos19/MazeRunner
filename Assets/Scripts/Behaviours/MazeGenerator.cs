@@ -2,13 +2,17 @@
 // https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
 
 using UnityEngine;
+using UnityEngine.AI;
 
+[RequireComponent(typeof(NavMeshSurface))]
 public class MazeGenerator : MonoBehaviour
 {
 
 	private int[,] _data = { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
 	private readonly MazeDataGenerator _dataGenerator = new MazeDataGenerator();
 	private readonly MazeMeshGenerator _meshGenerator = new MazeMeshGenerator();
+
+	private NavMeshSurface _surface;
 	
 	public static MazeWaveSettings Settings { get; set; } = new MazeWaveSettings();
 
@@ -23,6 +27,11 @@ public class MazeGenerator : MonoBehaviour
 
 	public GameObject enemyPrefab;
 	public GameObject bossPrefab;
+
+	private void Awake()
+	{
+		_surface = GetComponent<NavMeshSurface>();
+	}
 	
 	private void Start()
 	{
@@ -54,6 +63,7 @@ public class MazeGenerator : MonoBehaviour
 		meshColldier.sharedMesh = meshFilter.mesh;
 		var meshRenderer = maze.AddComponent<MeshRenderer>();
 		meshRenderer.materials = new[] { mazeFloorMaterial, mazeWallMaterial };
+		BakeMazeMesh();
 	}
 
 	private void SetMazeWave(int[,] data, MazeWaveSettings settings)
@@ -103,6 +113,11 @@ public class MazeGenerator : MonoBehaviour
 				if (data[ri, ci] == 0)
 					return new Vector3(ci * mazeFloorWidth, 1, ri * mazeFloorWidth);
 		return new Vector3();
+	}
+
+	private void BakeMazeMesh()
+	{
+		_surface.BuildNavMesh();
 	}
 	
 }
