@@ -1,9 +1,16 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.google.external-dependency-manager": "1.2.155",
     "com.unity.ads": "3.4.4",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
+=======
+    "com.unity.ads": "3.4.5",
+    "com.unity.collab-proxy": "1.2.16",
+    "com.unity.ide.rider": "1.1.4",
+    "com.unity.inputsystem": "1.0.0",
+>>>>>>> RunAwayHaroldOld/master-old
     "com.unity.test-framework": "1.1.14",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.14",
@@ -39,6 +46,7 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
+<<<<<<< HEAD
   },
   "scopedRegistries": [
     {
@@ -49,4 +57,7 @@
       ]
     }
   ]
+=======
+  }
+>>>>>>> RunAwayHaroldOld/master-old
 }

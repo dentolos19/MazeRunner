@@ -31,6 +31,10 @@ UnityConnectSettings:
     m_GameIds:
       AndroidPlayer: 3586538
       iPhonePlayer: 3586539
+<<<<<<< HEAD
     m_GameId: 
+=======
+    m_GameId: 3586538
+>>>>>>> RunAwayHaroldOld/master-old
   PerformanceReportingSettings:
     m_Enabled: 0

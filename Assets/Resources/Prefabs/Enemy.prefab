@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &7373090019018627356
+=======
+--- !u!1 &1132268688657206782
+>>>>>>> RunAwayHaroldOld/master-old
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,6 +12,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 7373090019018627352}
   - component: {fileID: 7373090019018627355}
   - component: {fileID: 7373090019018627354}
@@ -17,40 +22,72 @@ GameObject:
   - component: {fileID: 7560557737823648083}
   m_Layer: 0
   m_Name: Enemy
+=======
+  - component: {fileID: 1132268688657206781}
+  - component: {fileID: 1132268688657206771}
+  - component: {fileID: 1132268688657206780}
+  m_Layer: 0
+  m_Name: Body
+>>>>>>> RunAwayHaroldOld/master-old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &7373090019018627352
+=======
+--- !u!4 &1132268688657206781
+>>>>>>> RunAwayHaroldOld/master-old
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 7373090019018627356}
+=======
+  m_GameObject: {fileID: 1132268688657206782}
+>>>>>>> RunAwayHaroldOld/master-old
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+<<<<<<< HEAD
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7373090019018627355
+=======
+  m_Father: {fileID: 1132268689901565200}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1132268688657206771
+>>>>>>> RunAwayHaroldOld/master-old
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 7373090019018627356}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7373090019018627354
+=======
+  m_GameObject: {fileID: 1132268688657206782}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1132268688657206780
+>>>>>>> RunAwayHaroldOld/master-old
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 7373090019018627356}
+=======
+  m_GameObject: {fileID: 1132268688657206782}
+>>>>>>> RunAwayHaroldOld/master-old
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +99,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< HEAD
   - {fileID: 2100000, guid: 5a6a1393956b0274d94f567d8c31f9b3, type: 2}
+=======
+  - {fileID: 2100000, guid: 3a1b2cead45d7204bbdbd13f5d65f3fe, type: 2}
+>>>>>>> RunAwayHaroldOld/master-old
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,13 +124,54 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD
 --- !u!143 &7373090019018627357
+=======
+--- !u!1 &1132268689901565203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132268689901565200}
+  - component: {fileID: 1132268689901565201}
+  - component: {fileID: 1132268689901565202}
+  m_Layer: 0
+  m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1132268689901565200
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132268689901565203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1132268688657206781}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!143 &1132268689901565201
+>>>>>>> RunAwayHaroldOld/master-old
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 7373090019018627356}
+=======
+  m_GameObject: {fileID: 1132268689901565203}
+>>>>>>> RunAwayHaroldOld/master-old
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -101,12 +183,17 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &7373090019018627334
+=======
+--- !u!114 &1132268689901565202
+>>>>>>> RunAwayHaroldOld/master-old
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 7373090019018627356}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -152,3 +239,37 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+=======
+  m_GameObject: {fileID: 1132268689901565203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9c2c46057e36c42b88788c902caef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 10
+  attackTime: 0.5
+  canFly: 0
+  estimateElevation: 0
+  estRayTimer: 1
+  floatHeight: 0
+  huntingTimer: 5
+  moveableRadius: 20
+  on: 1
+  pauseAtWaypoints: 0
+  pauseMax: 3
+  pauseMin: 1
+  randomSpeed: 7
+  requireTarget: 1
+  reversePatrol: 1
+  rotationSpeed: 20
+  runAway: 0
+  runBufferDistance: 50
+  runDistance: 25
+  runSpeed: 6
+  runTo: 1
+  target: {fileID: 0}
+  useWaypoints: 0
+  visualRadius: 100
+  walkSpeed: 5
+  waypoints: []
+>>>>>>> RunAwayHaroldOld/master-old

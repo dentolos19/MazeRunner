@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags: []
+=======
+  tags:
+  - Generated
+  - Goal
+  - Enemy
+>>>>>>> RunAwayHaroldOld/master-old
   layers:
   - Default
   - TransparentFX
@@ -13,7 +20,11 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Hardcoded
+=======
+  - 
+>>>>>>> RunAwayHaroldOld/master-old
   - 
   - 
   - 
