@@ -69,11 +69,7 @@ NavMeshProjectSettings:
     cost: 1
   - name: 
     cost: 1
-<<<<<<< HEAD
   m_LastAgentTypeID: -334000983
-=======
-  m_LastAgentTypeID: -887442657
->>>>>>> RunAwayHaroldOld/master-old
   m_Settings:
   - serializedVersion: 2
     agentTypeID: 0
@@ -91,7 +87,6 @@ NavMeshProjectSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-<<<<<<< HEAD
   - serializedVersion: 2
     agentTypeID: -334000983
     agentRadius: 0.5
@@ -111,7 +106,3 @@ NavMeshProjectSettings:
   m_SettingNames:
   - Humanoid
   - Enemy
-=======
-  m_SettingNames:
-  - Humanoid
->>>>>>> RunAwayHaroldOld/master-old

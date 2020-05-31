@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 03c834d3241049a488fd46fe904edeed
-=======
-guid: f92fc1a139d654842a5d52e2e0835ac3
->>>>>>> RunAwayHaroldOld/master-old
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -68,11 +64,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> RunAwayHaroldOld/master-old
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -84,11 +76,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> RunAwayHaroldOld/master-old
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,11 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> RunAwayHaroldOld/master-old
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,11 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> RunAwayHaroldOld/master-old
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,11 +112,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> RunAwayHaroldOld/master-old
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

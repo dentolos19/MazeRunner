@@ -3,19 +3,11 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
-<<<<<<< HEAD
       <Path>Library/PackageCache/com.google.external-dependency-manager@1.2.155</Path>
       <Path>Library/PackageCache/com.unity.ads@3.4.4</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
-=======
-      <Path>Library/PackageCache/com.unity.ads@3.4.5</Path>
-      <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>
-      <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
-      <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
-      <Path>Library/PackageCache/com.unity.inputsystem@1.0.0</Path>
->>>>>>> RunAwayHaroldOld/master-old
       <Path>Library/PackageCache/com.unity.test-framework@1.1.14</Path>
       <Path>Library/PackageCache/com.unity.textmeshpro@2.0.1</Path>
       <Path>Library/PackageCache/com.unity.timeline@1.2.14</Path>
@@ -25,17 +17,10 @@
     <explicitExcludes>
       <Path>.git</Path>
       <Path>.idea</Path>
-<<<<<<< HEAD
       <Path>.vs</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
       <Path>Temp</Path>
-=======
-      <Path>Library</Path>
-      <Path>Logs</Path>
-      <Path>Temp</Path>
-      <Path>docs</Path>
->>>>>>> RunAwayHaroldOld/master-old
       <Path>obj</Path>
     </explicitExcludes>
   </component>
