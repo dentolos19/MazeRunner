@@ -2,7 +2,7 @@
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerInterface))]
-public class PlayerControls : MonoBehaviour
+public class PlayerFunctions : MonoBehaviour
 {
 
 	private float _defaultSpeed;

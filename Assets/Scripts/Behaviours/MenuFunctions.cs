@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class MenuFunctions : MonoBehaviour
 {
 
+	[Header("Screens")]
 	public GameObject mainScreen;
 	public GameObject optionsScreen;
 	public GameObject startScreen;
-
+	
 	public Slider optionsSensitivity;
 	public TMP_Dropdown startDifficulty;
 

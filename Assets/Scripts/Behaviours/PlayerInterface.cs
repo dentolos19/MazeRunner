@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerInterface : MonoBehaviour
 {
 
+	private bool _screenIsUp;
 	private Stopwatch _timer;
 	
 	public TextMeshProUGUI compass;
 	public TextMeshProUGUI timer;
-
-	private bool _screenIsUp;
 	
+	[Header("Screens")]
 	public GameObject pauseScreen;
 	public GameObject deathScreen;
 	public GameObject winnerScreen;

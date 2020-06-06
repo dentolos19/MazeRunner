@@ -16,15 +16,19 @@ public class MazeGenerator : MonoBehaviour
 	
 	public static MazeWaveSettings Settings { get; set; } = new MazeWaveSettings();
 
-	public Material mazeFloorMaterial;
-	public Material mazeWallMaterial;
+	[Header("Maze Materials")]
+	public Material floorMaterial;
+	public Material wallMaterial;
 
-	public float mazeFloorWidth = 3;
-	public float mazeWallHeight = 3;
+	[Header("Maze Size")]
+	public float floorWidth = 3;
+	public float wallHeight = 3;
 
+	[Header("Maze Protagonist")]
 	public Transform player;
 	public Transform goal;
 
+	[Header("Maze Antagonist")]
 	public GameObject enemyPrefab;
 	public GameObject bossPrefab;
 
@@ -58,11 +62,11 @@ public class MazeGenerator : MonoBehaviour
 		maze.transform.position = Vector3.zero;
 		maze.name = "Maze";
 		var meshFilter = maze.AddComponent<MeshFilter>();
-		meshFilter.mesh = _meshGenerator.Generate(data, mazeFloorWidth, mazeWallHeight);
+		meshFilter.mesh = _meshGenerator.Generate(data, floorWidth, wallHeight);
 		var meshColldier = maze.AddComponent<MeshCollider>();
 		meshColldier.sharedMesh = meshFilter.mesh;
 		var meshRenderer = maze.AddComponent<MeshRenderer>();
-		meshRenderer.materials = new[] { mazeFloorMaterial, mazeWallMaterial };
+		meshRenderer.materials = new[] { floorMaterial, wallMaterial };
 		BakeMazeMesh();
 	}
 
@@ -84,7 +88,7 @@ public class MazeGenerator : MonoBehaviour
 			for (var ci = 0; ci <= columnMax; ci++)
 				if (data[ri, ci] == 0)
 				{
-					player.position = new Vector3(ci * mazeFloorWidth, 1, ri * mazeFloorWidth);
+					player.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
 					return;
 				}
 	}
@@ -97,7 +101,7 @@ public class MazeGenerator : MonoBehaviour
 			for (var ci = columnMax; ci >= 0; ci--)
 				if (data[ri, ci] == 0)
 				{
-					goal.position = new Vector3(ci * mazeFloorWidth, 0.5f, ri * mazeFloorWidth);
+					goal.position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
 					return;
 				}
 	}
@@ -111,7 +115,7 @@ public class MazeGenerator : MonoBehaviour
 		for (var ri = rowRad; ri >= 0; ri--)
 			for (var ci = columnRad; ci >= 0; ci--)
 				if (data[ri, ci] == 0)
-					return new Vector3(ci * mazeFloorWidth, 1, ri * mazeFloorWidth);
+					return new Vector3(ci * floorWidth, 1, ri * floorWidth);
 		return new Vector3();
 	}
 

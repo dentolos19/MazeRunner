@@ -5,6 +5,7 @@
     <explicitIncludes>
       <Path>Library/PackageCache/com.google.external-dependency-manager@1.2.155</Path>
       <Path>Library/PackageCache/com.unity.ads@3.4.4</Path>
+      <Path>Library/PackageCache/com.unity.ads@3.4.5</Path>
       <Path>Library/PackageCache/com.unity.collab-proxy@1.2.16</Path>
       <Path>Library/PackageCache/com.unity.ext.nunit@1.0.0</Path>
       <Path>Library/PackageCache/com.unity.ide.rider@1.1.4</Path>
@@ -19,8 +20,8 @@
       <Path>.idea</Path>
       <Path>.vs</Path>
       <Path>Library</Path>
-      <Path>Logs</Path>
       <Path>Temp</Path>
+      <Path>docs</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>
