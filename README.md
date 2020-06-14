@@ -2,4 +2,4 @@
 
 I made this game just for the learning experience and learning more about game development! You can try out this game with your web browser [here](https://dentolos19.github.io/play/runawayharold). If you find any issues or bugs please report them [here](https://github.com/dentolos19/RunAwayHarold/issues).
 
-![Preview](https://dentolos19.github.io/preview/runawayharold.png)
+![Preview](https://dentolos19.github.io/previews/runawayharold.png)
