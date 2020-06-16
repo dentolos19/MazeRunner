@@ -7,7 +7,7 @@ public static class Game
 {
 
 	public const bool UsePlayServices = false;
-		
+	
 	public static bool IsMobilePlatform { get; private set; }
 	public static bool IsPlayServicesEnabled { get; private set; }
 	public static Configuration Settings { get; private set; }
