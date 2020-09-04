@@ -1,6 +1,6 @@
 # Run Away Harold: The Dark Lord
 
-I made this game just for the learning experience and learning more about game development! You can try out this game with your web browser [here](https://dentolos19.github.io/RunAwayHarold).
+I made this game just for the learning experience and learning more about game development!
 
 ![Preview](https://dentolos19.github.io/previews/runawayharold.png)
 
