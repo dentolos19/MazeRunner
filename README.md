@@ -1,13 +1,20 @@
-# Run Away Harold: The Dark Lord
+<h1 align="center">
+  <br>
+    <img src="./.github/icon.png" width="200">
+  <br>
+    Run Away Harold
+  <br>
+</h1>
 
-I made this game just for the learning experience and learning more about game development!
+<p align="center">
+  <a href="https://unity.com">
+    <img src="https://img.shields.io/badge/Powered%20By-Unity-blue?logo=unity&style=for-the-badge">
+  </a>
+  <a href="https://www.jetbrains.com/rider">
+    <img src="https://img.shields.io/badge/Made%20With-Rider-blue?logo=jetbrains&style=for-the-badge">
+  </a>
+</p>
 
-![Preview](https://dentolos19.github.io/previews/runawayharold.png)
+## Screenshots
 
-### Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-### License
-
-This project is licensed with the [MIT License](https://choosealicense.com/licenses/mit).
+![](./.github/screenshots/0.png)
