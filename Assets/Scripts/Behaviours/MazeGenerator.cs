@@ -71,12 +71,16 @@ public class MazeGenerator : MonoBehaviour
 
 	private void SetMazeWave(int[,] data, MazeWaveSettings settings)
 	{
-		SetPlayerPosition(data);
-		SetGoalPosition(data);
-		for (var index = 0; index < settings.EnemyAmount; index++)
-			Instantiate(enemyPrefab, GenerateRandomPosition(data, 5), Quaternion.identity);
-		if (settings.EnableBoss)
-			Instantiate(bossPrefab, GenerateRandomPosition(data, 10), Quaternion.identity);
+		if (playerObject != null)
+			SetPlayerPosition(data);
+		if (goalObject != null)
+			SetGoalPosition(data);
+		if (enemyPrefab != null)
+			for (var index = 0; index < settings.EnemyAmount; index++)
+				Instantiate(enemyPrefab, GenerateRandomPosition(data, 5), Quaternion.identity);
+		if (bossPrefab != null)
+			if (settings.EnableBoss)
+				Instantiate(bossPrefab, GenerateRandomPosition(data, 10), Quaternion.identity);
 	}
 
 	private void SetPlayerPosition(int[,] data)
