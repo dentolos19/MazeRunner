@@ -20,27 +20,193 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2f3b091-4013-4e26-a660-70b12ed8e8ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/FloorMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/FloorMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/GoalMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/GoalMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/PlayerMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/PlayerMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/WallMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/WallMaterial.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Documentaion.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Documentaion.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Example Scene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Example Scene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Ground.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Ground.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickPlayerExample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickPlayerExample.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickSetterExample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickSetterExample.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Player.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Player.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Dynamic Joystick.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Dynamic Joystick.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Fixed Joystick.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Fixed Joystick.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Floating Joystick.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Floating Joystick.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Variable Joystick.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Variable Joystick.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Base.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Base/Joystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Base/Joystick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/JoystickEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/JoystickEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/VariableJoystickEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/VariableJoystickEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged_Arrows.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged_Arrows.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Documentation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/LiberationSans - OFL.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/LiberationSans.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Fonts/LiberationSans.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/LineBreaking Following Characters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Sprite Assets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Style Sheets.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/TMP Settings.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/TMP Settings.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Bitmap.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF SSD.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_SDF.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Sprite.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro_Mobile.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro_Properties.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro_Surface.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne Attribution.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Sprites/EmojiOne.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLookMobile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLookMobile.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Floor.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Floor.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Wall.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Wall.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +222,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLook.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLookMobile.cs" />
       </list>
     </option>
   </component>
@@ -121,6 +289,8 @@
       <updated>1604054855766</updated>
       <workItem from="1604054883370" duration="840000" />
       <workItem from="1604103352079" duration="3096000" />
+      <workItem from="1604130055590" duration="2104000" />
+      <workItem from="1604187707327" duration="1336000" />
     </task>
     <servers />
   </component>
@@ -151,5 +321,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="257" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1536.824@0.0.1536.824" timestamp="1604103707676" />
+    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog" timestamp="1604131580659">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1604131580659" />
   </component>
 </project>

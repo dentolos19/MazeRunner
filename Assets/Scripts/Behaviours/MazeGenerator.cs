@@ -9,11 +9,10 @@ public class MazeGenerator : MonoBehaviour
 {
 
 	private NavMeshSurface _surface;
+	private int _mazeSize;
 	private int[,] _data = { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
 	private readonly MazeDataGenerator _dataGenerator = new MazeDataGenerator();
 	private readonly MazeMeshGenerator _meshGenerator = new MazeMeshGenerator();
-	
-	public static MazeWaveSettings Settings { get; set; } = new MazeWaveSettings();
 
 	[Header("Maze Materials")]
 	public Material floorMaterial;
@@ -36,14 +35,22 @@ public class MazeGenerator : MonoBehaviour
 		_surface = GetComponent<NavMeshSurface>();
 	}
 	
-	private void Start()
+	public void GenerateMaze(int size)
 	{
-		GenerateMaze(Settings.MazeSize);
-	}
-
-	private void GenerateMaze(int size)
-	{
+		_mazeSize = size;
 		GenerateMaze(size - 2, size);
+	}
+	
+	public void SetMazeWave(int enemyAmount, int enemyDistance, bool enableBoss, int bossDistance)
+	{
+		if (enemyDistance > bossDistance)
+			Debug.LogWarning("Boss distance should be greater than enemy distance.");
+		if (enemyPrefab != null)
+			for (var index = 0; index < enemyAmount; index++)
+				Instantiate(enemyPrefab, GenerateRandomPosition(10), Quaternion.identity);
+		if (bossPrefab != null)
+			if (enableBoss)
+				Instantiate(bossPrefab, GenerateRandomPosition(5), Quaternion.identity);
 	}
 
 	private void GenerateMaze(int rows, int columns)
@@ -52,7 +59,10 @@ public class MazeGenerator : MonoBehaviour
 			Debug.LogWarning("Odd numbers works better for the maze.");
 		_data = _dataGenerator.GenerateData(rows, columns);
 		GenerateMesh(_data);
-		SetMazeWave(_data, Settings);
+		if (playerObject != null)
+			SetPlayerPosition();
+		if (goalObject != null)
+			SetGoalPosition();
 	}
 
 	private void GenerateMesh(int[,] data)
@@ -66,65 +76,46 @@ public class MazeGenerator : MonoBehaviour
 		meshColldier.sharedMesh = meshFilter.mesh;
 		var meshRenderer = maze.AddComponent<MeshRenderer>();
 		meshRenderer.materials = new[] { floorMaterial, wallMaterial };
-		BakeMazeMesh();
+		_surface.BuildNavMesh();
 	}
 
-	private void SetMazeWave(int[,] data, MazeWaveSettings settings)
+	private void SetPlayerPosition()
 	{
-		if (playerObject != null)
-			SetPlayerPosition(data);
-		if (goalObject != null)
-			SetGoalPosition(data);
-		if (enemyPrefab != null)
-			for (var index = 0; index < settings.EnemyAmount; index++)
-				Instantiate(enemyPrefab, GenerateRandomPosition(data, 5), Quaternion.identity);
-		if (bossPrefab != null)
-			if (settings.EnableBoss)
-				Instantiate(bossPrefab, GenerateRandomPosition(data, 10), Quaternion.identity);
-	}
-
-	private void SetPlayerPosition(int[,] data)
-	{
-		var rowMax = data.GetUpperBound(0);
-		var columnMax = data.GetUpperBound(1);
+		var rowMax = _data.GetUpperBound(0);
+		var columnMax = _data.GetUpperBound(1);
 		for (var ri = 0; ri <= rowMax; ri++)
 			for (var ci = 0; ci <= columnMax; ci++)
-				if (data[ri, ci] == 0)
+				if (_data[ri, ci] == 0)
 				{
 					playerObject.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
 					return;
 				}
 	}
 
-	private void SetGoalPosition(int[,] data)
+	private void SetGoalPosition()
 	{
-		var rowMax = data.GetUpperBound(0);
-		var columnMax = data.GetUpperBound(1);
+		var rowMax = _data.GetUpperBound(0);
+		var columnMax = _data.GetUpperBound(1);
 		for (var ri = rowMax; ri >= 0; ri--)
 			for (var ci = columnMax; ci >= 0; ci--)
-				if (data[ri, ci] == 0)
+				if (_data[ri, ci] == 0)
 				{
 					goalObject.position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
 					return;
 				}
 	}
 
-	private Vector3 GenerateRandomPosition(int[,] data, int minimum = 0)
+	private Vector3 GenerateRandomPosition(int minimum = 0)
 	{
-		var rowMax = data.GetUpperBound(0);
-		var columnMax = data.GetUpperBound(1);
-		var rowRad = Random.Range(minimum, rowMax);
-		var columnRad = Random.Range(minimum, columnMax);
-		for (var ri = rowRad; ri >= 0; ri--)
-			for (var ci = columnRad; ci >= 0; ci--)
-				if (data[ri, ci] == 0)
+		var rowMax = _data.GetUpperBound(0);
+		var columnMax = _data.GetUpperBound(1);
+		var rowRandom = Random.Range(minimum, rowMax);
+		var columnRandom = Random.Range(minimum, columnMax);
+		for (var ri = rowRandom; ri >= 0; ri--)
+			for (var ci = columnRandom; ci >= 0; ci--)
+				if (_data[ri, ci] == 0)
 					return new Vector3(ci * floorWidth, 1, ri * floorWidth);
 		return new Vector3();
 	}
 
-	private void BakeMazeMesh()
-	{
-		_surface.BuildNavMesh();
-	}
-	
 }
