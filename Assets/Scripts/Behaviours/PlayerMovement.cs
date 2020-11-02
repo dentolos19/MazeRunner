@@ -5,9 +5,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private CharacterController _controller;
-
-    public Joystick joystick;
+    
     public float speed = 5;
+    public Joystick joystick;
 
     private void Awake()
     {

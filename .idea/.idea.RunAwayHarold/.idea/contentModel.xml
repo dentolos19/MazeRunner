@@ -85,11 +85,14 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Behaviours" t="Include">
+            <e p="EnemyBot.cs" t="Include" />
+            <e p="EnemyCombat.cs" t="Include" />
+            <e p="EntityMonitor.cs" t="Include" />
             <e p="GameMaster.cs" t="Include" />
             <e p="MazeGenerator.cs" t="Include" />
             <e p="PlayerLook.cs" t="Include" />
-            <e p="PlayerLookMobile.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+            <e p="PlayerStatistics.cs" t="Include" />
           </e>
           <e p="Components" t="Include">
             <e p="MazeDataGenerator.cs" t="Include" />

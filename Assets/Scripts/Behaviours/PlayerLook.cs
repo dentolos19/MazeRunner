@@ -11,7 +11,7 @@ public class PlayerLook : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        _sensitivity = Game.Settings.Sensitivity * 10;
+        _sensitivity = Game.RunningOnMobile ? Game.Settings.Sensitivity : Game.Settings.Sensitivity * 10;
     }
 
     private void Update()

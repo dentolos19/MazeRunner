@@ -9,7 +9,6 @@ public class MazeGenerator : MonoBehaviour
 {
 
 	private NavMeshSurface _surface;
-	private int _mazeSize;
 	private int[,] _data = { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
 	private readonly MazeDataGenerator _dataGenerator = new MazeDataGenerator();
 	private readonly MazeMeshGenerator _meshGenerator = new MazeMeshGenerator();
@@ -33,24 +32,6 @@ public class MazeGenerator : MonoBehaviour
 	private void Awake()
 	{
 		_surface = GetComponent<NavMeshSurface>();
-	}
-	
-	public void GenerateMaze(int size)
-	{
-		_mazeSize = size;
-		GenerateMaze(size - 2, size);
-	}
-	
-	public void SetMazeWave(int enemyAmount, int enemyDistance, bool enableBoss, int bossDistance)
-	{
-		if (enemyDistance > bossDistance)
-			Debug.LogWarning("Boss distance should be greater than enemy distance.");
-		if (enemyPrefab != null)
-			for (var index = 0; index < enemyAmount; index++)
-				Instantiate(enemyPrefab, GenerateRandomPosition(10), Quaternion.identity);
-		if (bossPrefab != null)
-			if (enableBoss)
-				Instantiate(bossPrefab, GenerateRandomPosition(5), Quaternion.identity);
 	}
 
 	private void GenerateMaze(int rows, int columns)
@@ -84,12 +65,16 @@ public class MazeGenerator : MonoBehaviour
 		var rowMax = _data.GetUpperBound(0);
 		var columnMax = _data.GetUpperBound(1);
 		for (var ri = 0; ri <= rowMax; ri++)
+		{
 			for (var ci = 0; ci <= columnMax; ci++)
+			{
 				if (_data[ri, ci] == 0)
 				{
 					playerObject.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
 					return;
 				}
+			}
+		}
 	}
 
 	private void SetGoalPosition()
@@ -116,6 +101,22 @@ public class MazeGenerator : MonoBehaviour
 				if (_data[ri, ci] == 0)
 					return new Vector3(ci * floorWidth, 1, ri * floorWidth);
 		return new Vector3();
+	}
+	
+	public void GenerateMaze(int size)
+	{
+		GenerateMaze(size - 2, size);
+	}
+	
+	public void SetMazeWave(int enemyAmount, int enemyDistance, bool enableBoss, int bossDistance)
+	{
+		if (enemyDistance > bossDistance)
+			Debug.LogWarning("Boss distance should be greater than enemy distance.");
+		if (enemyPrefab != null)
+			for (var index = 0; index < enemyAmount; index++)
+				Instantiate(enemyPrefab, GenerateRandomPosition(10), Quaternion.identity);
+		if (bossPrefab != null && enableBoss)
+			Instantiate(bossPrefab, GenerateRandomPosition(5), Quaternion.identity);
 	}
 
 }

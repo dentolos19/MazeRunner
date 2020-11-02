@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(MazeGenerator))]
 public class GameMaster : MonoBehaviour
@@ -8,7 +7,7 @@ public class GameMaster : MonoBehaviour
     public static MazeWaveSettings Settings { get; set; } = new MazeWaveSettings();
     
     private MazeGenerator _mazeGenerator;
-
+    
     public GameObject mobileInterface;
 
     private void Awake()
