@@ -1,6 +1,7 @@
 ﻿// Credits to Joseph Hocking
 // https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -71,7 +72,6 @@ public class MazeGenerator : MonoBehaviour
 				if (_data[ri, ci] == 0)
 				{
 					playerObject.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
-					return;
 				}
 			}
 		}
