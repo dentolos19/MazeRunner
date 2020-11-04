@@ -90,6 +90,7 @@
             <e p="EntityMonitor.cs" t="Include" />
             <e p="GameMaster.cs" t="Include" />
             <e p="InterfaceEvents.cs" t="Include" />
+            <e p="IntersceneSoundEmitter.cs" t="Include" />
             <e p="MazeGenerator.cs" t="Include" />
             <e p="PlayerLook.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />

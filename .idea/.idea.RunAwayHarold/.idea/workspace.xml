@@ -20,17 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2f3b091-4013-4e26-a660-70b12ed8e8ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Fonts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Background.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/Bells.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sounds/Bells.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLookMobile.cs" />
@@ -64,6 +61,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/EntityMonitor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/SoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" />
       </list>
     </option>
   </component>
@@ -127,6 +128,7 @@
       <workItem from="1604279478564" duration="748000" />
       <workItem from="1604294645730" duration="1281000" />
       <workItem from="1604387117139" duration="1320000" />
+      <workItem from="1604482587892" duration="1230000" />
     </task>
     <servers />
   </component>
