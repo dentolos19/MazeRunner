@@ -9,8 +9,7 @@ public class Configuration
     private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
     public float Sensitivity { get; set; } = 50;
-    public bool EnableBackgroundSounds { get; set; } = true;
-    
+
     public void Save()
     {
         var stream = new FileStream(Source, FileMode.Create);
