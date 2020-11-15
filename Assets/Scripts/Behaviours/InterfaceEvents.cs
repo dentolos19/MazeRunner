@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InterfaceEvents : MonoBehaviour
 {
 
-    public void OnPlayClick()
+    [Header("Menu Views")]
+    public GameObject mainView;
+    public GameObject optionsView;
+
+    [Header("Menu Objects")]
+    public Slider sensitivitySlider;
+
+    public void PlayGame()
     {
         // var settings = new MazeWaveSettings();
         // settings.SetPreset(MazeWaveSettings.PresetDifficulty.Impossible);
@@ -12,9 +20,25 @@ public class InterfaceEvents : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void OnExitClick()
+    public void ExitGame()
     {
         Application.Quit();
+        Debug.Log("Triggered quit.");
+    }
+
+    public void LoadOptions()
+    {
+        sensitivitySlider.value = Game.Settings.Sensitivity;
+        mainView.SetActive(false);
+        optionsView.SetActive(true);
+    }
+
+    public void SaveOptions()
+    {
+        Game.Settings.Sensitivity = sensitivitySlider.value;
+        Game.Settings.Save();
+        mainView.SetActive(true);
+        optionsView.SetActive(false);
     }
     
 }

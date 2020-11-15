@@ -7,13 +7,10 @@ public class GameMaster : MonoBehaviour
     public static MazeWaveSettings Settings { get; set; } = new MazeWaveSettings();
     
     private MazeGenerator _mazeGenerator;
-    
-    public GameObject mobileInterface;
 
     private void Awake()
     {
         _mazeGenerator = GetComponent<MazeGenerator>();
-        mobileInterface.SetActive(Game.RunningOnMobile);
     }
     
     private void Start()

@@ -6,8 +6,7 @@ public class IntersceneSoundEmitter : MonoBehaviour
     
     private static IntersceneSoundEmitter Instance { get; set; }
 
-    [HideInInspector]
-    public AudioSource source;
+    [HideInInspector] public AudioSource source;
     
     private void Awake()
     {

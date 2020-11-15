@@ -1,7 +1,6 @@
 ﻿// Credits to Joseph Hocking
 // https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
 
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -41,10 +40,8 @@ public class MazeGenerator : MonoBehaviour
 			Debug.LogWarning("Odd numbers works better for the maze.");
 		_data = _dataGenerator.GenerateData(rows, columns);
 		GenerateMesh(_data);
-		if (playerObject != null)
-			SetPlayerPosition();
-		if (goalObject != null)
-			SetGoalPosition();
+		SetPlayerPosition();
+		SetGoalPosition();
 	}
 
 	private void GenerateMesh(int[,] data)
@@ -66,15 +63,9 @@ public class MazeGenerator : MonoBehaviour
 		var rowMax = _data.GetUpperBound(0);
 		var columnMax = _data.GetUpperBound(1);
 		for (var ri = 0; ri <= rowMax; ri++)
-		{
 			for (var ci = 0; ci <= columnMax; ci++)
-			{
 				if (_data[ri, ci] == 0)
-				{
 					playerObject.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
-				}
-			}
-		}
 	}
 
 	private void SetGoalPosition()
@@ -84,10 +75,7 @@ public class MazeGenerator : MonoBehaviour
 		for (var ri = rowMax; ri >= 0; ri--)
 			for (var ci = columnMax; ci >= 0; ci--)
 				if (_data[ri, ci] == 0)
-				{
 					goalObject.position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
-					return;
-				}
 	}
 
 	private Vector3 GenerateRandomPosition(int minimum = 0)
@@ -110,8 +98,6 @@ public class MazeGenerator : MonoBehaviour
 	
 	public void SetMazeWave(int enemyAmount, int enemyDistance, bool enableBoss, int bossDistance)
 	{
-		if (enemyDistance > bossDistance)
-			Debug.LogWarning("Boss distance should be greater than enemy distance.");
 		if (enemyPrefab != null)
 			for (var index = 0; index < enemyAmount; index++)
 				Instantiate(enemyPrefab, GenerateRandomPosition(10), Quaternion.identity);
