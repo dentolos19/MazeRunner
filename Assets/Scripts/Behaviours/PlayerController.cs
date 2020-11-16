@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private float _cameraPitch;
     private float _sensitivity;
     private float _halfScreenWidth;
+    private float _inputDeadzone;
     private CharacterController _controller;
     private Vector2 _lookInput;
     private Vector2 _moveInput;
@@ -21,11 +22,13 @@ public class PlayerController : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
         _halfScreenWidth = Screen.width / 2;
+        _inputDeadzone = Mathf.Pow(Screen.height / 10, 2);
     }
     
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        if (!Game.RunningOnMobile)
+            Cursor.lockState = CursorLockMode.Locked;
         _sensitivity = Game.RunningOnMobile ? Game.Settings.Sensitivity / 2 : Game.Settings.Sensitivity * 10;
         _leftFingerId = -1;
         _rightFingerId = -1;
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour
                             _leftFingerId = touch.fingerId;
                             _moveInputStart = touch.position;
                         }
-                        else if (touch.position.x > _halfScreenWidth && _rightFingerId == -1)
+                        else if (touch.position.x > _halfScreenWidth && _rightFingerId <= -1)
                         {
                             _rightFingerId = touch.fingerId;
                         }
@@ -69,7 +72,7 @@ public class PlayerController : MonoBehaviour
                         break;
                 }
             }
-            if (!(_leftFingerId <= 1))
+            if (!(_leftFingerId <= -1))
                 TouchMove();
             if (!(_rightFingerId <= -1))
                 TouchLook();
@@ -77,7 +80,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             MouseLook();
-            KeyboardMove();
+            KeyboardMove();   
         }
     }
 
@@ -108,6 +111,8 @@ public class PlayerController : MonoBehaviour
 
     private void TouchMove()
     {
+        if (_moveInput.sqrMagnitude <= _inputDeadzone)
+            return;
         var direction = _moveInput.normalized * (speed * Time.deltaTime);
         var motion = transform.right * direction.x + transform.forward * direction.y;
         _controller.Move(motion);

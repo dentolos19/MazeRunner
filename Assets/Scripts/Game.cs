@@ -11,7 +11,7 @@ public static class Game
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Settings = Configuration.Load();
-        #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
+        #if (UNITY_ANDROID || UNITY_IOS)
         RunningOnMobile = true;
         #endif
     }

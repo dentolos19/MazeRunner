@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2f3b091-4013-4e26-a660-70b12ed8e8ad" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +41,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerStatistics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/EnemyCombat.cs" />
@@ -64,6 +59,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" />
       </list>
     </option>
@@ -135,6 +131,7 @@
       <workItem from="1605435255768" duration="531000" />
       <workItem from="1605435869502" duration="4275000" />
       <workItem from="1605486722912" duration="800000" />
+      <workItem from="1605518891438" duration="1274000" />
     </task>
     <servers />
   </component>
