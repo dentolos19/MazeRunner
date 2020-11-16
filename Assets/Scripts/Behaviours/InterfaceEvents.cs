@@ -12,6 +12,13 @@ public class InterfaceEvents : MonoBehaviour
     [Header("Menu Objects")]
     public Slider sensitivitySlider;
 
+    public Slider volumeSlider;
+
+    private void Start()
+    {
+        IntersceneSoundEmitter.Instance.source.volume = Game.Settings.Volume;
+    }
+    
     public void PlayGame()
     {
         // var settings = new MazeWaveSettings();
@@ -29,6 +36,7 @@ public class InterfaceEvents : MonoBehaviour
     public void LoadOptions()
     {
         sensitivitySlider.value = Game.Settings.Sensitivity;
+        volumeSlider.value = Game.Settings.Volume;
         mainView.SetActive(false);
         optionsView.SetActive(true);
     }
@@ -36,7 +44,9 @@ public class InterfaceEvents : MonoBehaviour
     public void SaveOptions()
     {
         Game.Settings.Sensitivity = sensitivitySlider.value;
+        Game.Settings.Volume = volumeSlider.value;
         Game.Settings.Save();
+        IntersceneSoundEmitter.Instance.source.volume = Game.Settings.Volume;
         mainView.SetActive(true);
         optionsView.SetActive(false);
     }

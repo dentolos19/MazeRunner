@@ -4,7 +4,7 @@
 public class IntersceneSoundEmitter : MonoBehaviour
 {
     
-    private static IntersceneSoundEmitter Instance { get; set; }
+    public static IntersceneSoundEmitter Instance { get; set; }
 
     [HideInInspector] public AudioSource source;
     

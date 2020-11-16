@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private float _cameraPitch;
     private float _sensitivity;
     private float _halfScreenWidth;
-    private float _moveDeadzone;
     private CharacterController _controller;
     private Vector2 _lookInput;
     private Vector2 _moveInput;
@@ -18,13 +17,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 5;
     public Transform cameraObject;
     
-    [Header("Mobile Definitions")]
-    public float deadzone = 10;
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
         _halfScreenWidth = Screen.width / 2;
-        _moveDeadzone = Mathf.Pow(Screen.height / deadzone, 2);
     }
     
     private void Start()
@@ -54,6 +50,10 @@ public class PlayerController : MonoBehaviour
                             _rightFingerId = touch.fingerId;
                         }
                         break;
+                    case TouchPhase.Stationary:
+                        if (touch.fingerId == _rightFingerId)
+                            _lookInput = Vector2.zero;
+                        break;
                     case TouchPhase.Moved:
                         if (touch.fingerId == _leftFingerId)
                             _moveInput = touch.position - _moveInputStart;
@@ -66,10 +66,6 @@ public class PlayerController : MonoBehaviour
                             _leftFingerId = -1;
                         else if (touch.fingerId == _rightFingerId)
                             _rightFingerId = -1;
-                        break;
-                    case TouchPhase.Stationary:
-                        if (touch.fingerId == _rightFingerId)
-                            _lookInput = Vector2.zero;
                         break;
                 }
             }
@@ -112,8 +108,6 @@ public class PlayerController : MonoBehaviour
 
     private void TouchMove()
     {
-        if (_moveInput.sqrMagnitude <= _moveDeadzone)
-            return;
         var direction = _moveInput.normalized * (speed * Time.deltaTime);
         var motion = transform.right * direction.x + transform.forward * direction.y;
         _controller.Move(motion);

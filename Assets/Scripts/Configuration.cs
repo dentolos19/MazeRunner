@@ -9,6 +9,7 @@ public class Configuration
     private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
     public float Sensitivity { get; set; } = 50;
+    public float Volume { get; set; } = 1;
 
     public void Save()
     {

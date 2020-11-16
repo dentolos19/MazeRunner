@@ -41,27 +41,27 @@ public class MazeMeshGenerator
 		return maze;
 	}
 	
-	private void CreateMesh(Matrix4x4 matrix, ref List<Vector3> newVertices, ref List<Vector2> newUVs, ref List<int> newTriangles)
+	private void CreateMesh(Matrix4x4 matrix, ref List<Vector3> vertices, ref List<Vector2> uvs, ref List<int> triangles)
 	{
-		var index = newVertices.Count;
+		var index = vertices.Count;
 		var vertice1 = new Vector3(-0.5f, -0.5f, 0);
 		var vertice2 = new Vector3(-0.5f, 0.5f, 0);
 		var vertice3 = new Vector3(0.5f, 0.5f, 0);
 		var vertice4 = new Vector3(0.5f, -0.5f, 0);
-		newVertices.Add(matrix.MultiplyPoint3x4(vertice1));
-		newVertices.Add(matrix.MultiplyPoint3x4(vertice2));
-		newVertices.Add(matrix.MultiplyPoint3x4(vertice3));
-		newVertices.Add(matrix.MultiplyPoint3x4(vertice4));
-		newUVs.Add(new Vector2(1, 0));
-		newUVs.Add(new Vector2(1, 1));
-		newUVs.Add(new Vector2(0, 1));
-		newUVs.Add(new Vector2(0, 0));
-		newTriangles.Add(index + 2);
-		newTriangles.Add(index + 1);
-		newTriangles.Add(index);
-		newTriangles.Add(index + 3);
-		newTriangles.Add(index + 2);
-		newTriangles.Add(index);
+		vertices.Add(matrix.MultiplyPoint3x4(vertice1));
+		vertices.Add(matrix.MultiplyPoint3x4(vertice2));
+		vertices.Add(matrix.MultiplyPoint3x4(vertice3));
+		vertices.Add(matrix.MultiplyPoint3x4(vertice4));
+		uvs.Add(new Vector2(1, 0));
+		uvs.Add(new Vector2(1, 1));
+		uvs.Add(new Vector2(0, 1));
+		uvs.Add(new Vector2(0, 0));
+		triangles.Add(index + 2);
+		triangles.Add(index + 1);
+		triangles.Add(index);
+		triangles.Add(index + 3);
+		triangles.Add(index + 2);
+		triangles.Add(index);
 	}
 	
 }

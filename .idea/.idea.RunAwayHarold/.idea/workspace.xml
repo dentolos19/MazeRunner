@@ -20,119 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2f3b091-4013-4e26-a660-70b12ed8e8ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Documentaion.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Documentaion.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Example Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Example Scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickPlayerExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickPlayerExample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickSetterExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/JoystickSetterExample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Player.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Examples/Player.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Dynamic Joystick.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Dynamic Joystick.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Fixed Joystick.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Fixed Joystick.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Floating Joystick.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Floating Joystick.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Variable Joystick.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Prefabs/Variable Joystick.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Base.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Base/Joystick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Base/Joystick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/FloatingJoystickEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/JoystickEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/JoystickEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/VariableJoystickEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Editor/VariableJoystickEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Outline_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Plain_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/All Axis Backgrounds/AllAxis_Ridged_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Outline_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Plain_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Handles/Handle_Ridged_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Outline_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Plain_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Horizontal Backgrounds/Horizontal_Ridged_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Outline_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Plain_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged_Arrows.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Joystick Pack/Sprites/Vertical Backgrounds/Vertical_Ridged_Arrows.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLook.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLook.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,8 +45,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerStatistics.cs" />
@@ -161,7 +53,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/EntityMonitor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLookMobile.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerLook.cs" />
@@ -169,8 +60,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerKeyboardController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configuration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeDataGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeMeshGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -240,6 +134,7 @@
       <workItem from="1605249065324" duration="154000" />
       <workItem from="1605435255768" duration="531000" />
       <workItem from="1605435869502" duration="4275000" />
+      <workItem from="1605486722912" duration="800000" />
     </task>
     <servers />
   </component>

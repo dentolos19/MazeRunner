@@ -16,7 +16,11 @@ public class MazeDataGenerator
         for (var ri = rowMax; ri >= 0; ri--)
         {
             for (var ci = 0; ci <= columnMax; ci++)
-                if (ri == 0 || ci == 0 || ri == rowMax || ci == columnMax) { data[ri, ci] = 1; }
+            {
+                if (ri == 0 || ci == 0 || ri == rowMax || ci == columnMax)
+                {
+                    data[ri, ci] = 1;
+                }
                 else if (ri % 2 == 0 && ci % 2 == 0)
                 {
                     if (!(Random.value > Threshold))
@@ -25,7 +29,8 @@ public class MazeDataGenerator
                     var a = Random.value < 0.5 ? 0 : Random.value < 0.5 ? -1 : 1;
                     var b = a != 0 ? 0 : Random.value < 0.5 ? -1 : 1;
                     data[ri + a, ci + b] = 1;
-                }
+                }   
+            }
         }
         return data;
     }
