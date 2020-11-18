@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStatistics : MonoBehaviour
@@ -18,10 +19,20 @@ public class PlayerStatistics : MonoBehaviour
     {
         healthText.text = $"{_currentHealth} HP";
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish"))
+            GameEvents.Instance.ToggleWinView();
+    }
+
     public void Damage(int damage)
     {
         _currentHealth -= damage;
+        if (_currentHealth <= 0)
+        {
+            GameEvents.Instance.ToggleLoseView();
+        }
     }
 
 }

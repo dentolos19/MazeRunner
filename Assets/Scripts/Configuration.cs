@@ -5,7 +5,7 @@ using UnityEngine;
 public class Configuration
 {
 
-    private static readonly string Source = Path.Combine(Application.persistentDataPath, "RunAwayHarold.cfg");
+    private static readonly string Source = Path.Combine(Application.persistentDataPath, "config.xml");
     private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(Configuration));
 
     public float Sensitivity { get; set; } = 50;

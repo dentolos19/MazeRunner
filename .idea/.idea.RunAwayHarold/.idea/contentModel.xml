@@ -32,10 +32,11 @@
             <e p="EnemyBot.cs" t="Include" />
             <e p="EnemyCombat.cs" t="Include" />
             <e p="EntityMonitor.cs" t="Include" />
+            <e p="GameEvents.cs" t="Include" />
             <e p="GameMaster.cs" t="Include" />
-            <e p="InterfaceEvents.cs" t="Include" />
             <e p="IntersceneSoundEmitter.cs" t="Include" />
             <e p="MazeGenerator.cs" t="Include" />
+            <e p="MenuEvents.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerStatistics.cs" t="Include" />
           </e>

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -27,8 +28,7 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
-        if (!Game.RunningOnMobile)
-            Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         _sensitivity = Game.RunningOnMobile ? Game.Settings.Sensitivity / 2 : Game.Settings.Sensitivity * 10;
         _leftFingerId = -1;
         _rightFingerId = -1;

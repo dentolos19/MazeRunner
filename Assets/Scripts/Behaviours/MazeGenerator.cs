@@ -63,9 +63,19 @@ public class MazeGenerator : MonoBehaviour
 		var rowMax = _data.GetUpperBound(0);
 		var columnMax = _data.GetUpperBound(1);
 		for (var ri = 0; ri <= rowMax; ri++)
+		{
 			for (var ci = 0; ci <= columnMax; ci++)
-				if (_data[ri, ci] == 0)
-					playerObject.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
+			{
+				if (_data[ri, ci] != 0)
+					continue;
+				var position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
+				playerObject.position = position;
+				Debug.Log($"Generated player position: {position}");
+				if (playerObject.position != position)
+					Debug.LogWarning("Player position not set correctly.");
+				return;
+			}
+		}
 	}
 
 	private void SetGoalPosition()
@@ -73,9 +83,19 @@ public class MazeGenerator : MonoBehaviour
 		var rowMax = _data.GetUpperBound(0);
 		var columnMax = _data.GetUpperBound(1);
 		for (var ri = rowMax; ri >= 0; ri--)
+		{
 			for (var ci = columnMax; ci >= 0; ci--)
-				if (_data[ri, ci] == 0)
-					goalObject.position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
+			{
+				if (_data[ri, ci] != 0)
+					continue;
+				var position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
+				goalObject.position = position;
+				Debug.Log($"Generated goal position: {position}");
+				if (goalObject.position != position)
+					Debug.LogWarning("Goal position not set correctly.");
+				return;
+			}
+		}
 	}
 
 	private Vector3 GenerateRandomPosition(int minimum = 0)
@@ -98,11 +118,10 @@ public class MazeGenerator : MonoBehaviour
 	
 	public void SetMazeWave(int enemyAmount, int enemyDistance, bool enableBoss, int bossDistance)
 	{
-		if (enemyPrefab != null)
-			for (var index = 0; index < enemyAmount; index++)
-				Instantiate(enemyPrefab, GenerateRandomPosition(10), Quaternion.identity);
-		if (bossPrefab != null && enableBoss)
-			Instantiate(bossPrefab, GenerateRandomPosition(5), Quaternion.identity);
+		for (var index = 0; index < enemyAmount; index++)
+				Instantiate(enemyPrefab, GenerateRandomPosition(enemyDistance), Quaternion.identity);
+		if (enableBoss)
+			Instantiate(bossPrefab, GenerateRandomPosition(bossDistance), Quaternion.identity);
 	}
 
 }

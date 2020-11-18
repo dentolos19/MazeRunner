@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class InterfaceEvents : MonoBehaviour
+public class MenuEvents : MonoBehaviour
 {
 
     [Header("Menu Views")]
@@ -16,7 +16,9 @@ public class InterfaceEvents : MonoBehaviour
 
     private void Start()
     {
-        IntersceneSoundEmitter.Instance.source.volume = Game.Settings.Volume;
+        IntersceneSoundEmitter.Instance.UpdateVolume(Game.Settings.Volume);
+        sensitivitySlider.value = Game.Settings.Sensitivity;
+        volumeSlider.value = Game.Settings.Volume;
     }
     
     public void PlayGame()
@@ -30,13 +32,11 @@ public class InterfaceEvents : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
-        Debug.Log("Triggered quit.");
+        Debug.Log("Triggered application quit.");
     }
 
     public void LoadOptions()
     {
-        sensitivitySlider.value = Game.Settings.Sensitivity;
-        volumeSlider.value = Game.Settings.Volume;
         mainView.SetActive(false);
         optionsView.SetActive(true);
     }
@@ -46,9 +46,12 @@ public class InterfaceEvents : MonoBehaviour
         Game.Settings.Sensitivity = sensitivitySlider.value;
         Game.Settings.Volume = volumeSlider.value;
         Game.Settings.Save();
-        IntersceneSoundEmitter.Instance.source.volume = Game.Settings.Volume;
         mainView.SetActive(true);
         optionsView.SetActive(false);
+    }
+    public void UpdateVolume()
+    {
+        IntersceneSoundEmitter.Instance.UpdateVolume(volumeSlider.value);
     }
     
 }
