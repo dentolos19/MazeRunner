@@ -1,8 +1,11 @@
-﻿public class MazeWaveSettings
+﻿using UnityEngine;
+
+public class MazeWaveSettings
 {
 
-    public enum PresetDifficulty { Easy, Normal, Hard, Impossible }
-	
+    public enum PresetDifficulty { Easy, Normal, Hard, Impossible, Debug }
+
+    public PresetDifficulty Difficulty { get; private set; } = PresetDifficulty.Debug;
     public int MazeSize { get; private set; } = 25;
     public int EnemyAmount { get; private set; } = 5;
     public int EnemyDistance { get; private set; } = 10;
@@ -44,6 +47,7 @@
                 // BossDistance = 20;
                 break;
         }
+        Difficulty = preset;
     }
 	
 }

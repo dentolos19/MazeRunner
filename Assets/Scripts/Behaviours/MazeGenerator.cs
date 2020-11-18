@@ -68,11 +68,7 @@ public class MazeGenerator : MonoBehaviour
 			{
 				if (_data[ri, ci] != 0)
 					continue;
-				var position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
-				playerObject.position = position;
-				Debug.Log($"Generated player position: {position}");
-				if (playerObject.position != position)
-					Debug.LogWarning("Player position not set correctly.");
+				playerObject.position = new Vector3(ci * floorWidth, 1, ri * floorWidth);
 				return;
 			}
 		}
@@ -88,11 +84,7 @@ public class MazeGenerator : MonoBehaviour
 			{
 				if (_data[ri, ci] != 0)
 					continue;
-				var position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
-				goalObject.position = position;
-				Debug.Log($"Generated goal position: {position}");
-				if (goalObject.position != position)
-					Debug.LogWarning("Goal position not set correctly.");
+				goalObject.position = new Vector3(ci * floorWidth, 0.5f, ri * floorWidth);
 				return;
 			}
 		}

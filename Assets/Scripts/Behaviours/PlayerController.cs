@@ -1,20 +1,24 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
 
-    private int _leftFingerId;
-    private int _rightFingerId;
     private float _cameraPitch;
     private float _sensitivity;
+    private CharacterController _controller;
+    
+    #if UNITY_IOS && UNITY_ANDROID
+    
+    private int _leftFingerId;
+    private int _rightFingerId;
     private float _halfScreenWidth;
     private float _inputDeadzone;
-    private CharacterController _controller;
     private Vector2 _lookInput;
     private Vector2 _moveInput;
     private Vector2 _moveInputStart;
+
+    #endif
 
     public float speed = 5;
     public Transform cameraObject;
@@ -22,23 +26,29 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
+        #if UNITY_IOS && UNITY_ANDROID
         _halfScreenWidth = Screen.width / 2;
         _inputDeadzone = Mathf.Pow(Screen.height / 10, 2);
+        #endif
     }
     
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        _sensitivity = Game.RunningOnMobile ? Game.Settings.Sensitivity / 2 : Game.Settings.Sensitivity * 10;
+        _sensitivity = Game.Settings.Sensitivity * 10;
+        #if UNITY_IOS && UNITY_ANDROID
+        _sensitivity = Game.Settings.Sensitivity / 2
         _leftFingerId = -1;
         _rightFingerId = -1;
+        #endif
     }
 
     private void Update()
     {
-        if (Game.RunningOnMobile)
-        {
-            foreach (var touch in Input.touches)
+        MouseLook();
+        KeyboardMove();
+        #if UNITY_IOS && UNITY_ANDROID
+        foreach (var touch in Input.touches)
             {
                 switch (touch.phase)
                 {
@@ -76,12 +86,7 @@ public class PlayerController : MonoBehaviour
                 TouchMove();
             if (!(_rightFingerId <= -1))
                 TouchLook();
-        }
-        else
-        {
-            MouseLook();
-            KeyboardMove();   
-        }
+        #endif
     }
 
     private void MouseLook()
@@ -101,6 +106,8 @@ public class PlayerController : MonoBehaviour
         var motion = transform.right * horizontal + transform.forward * vertical;
         _controller.Move(motion * (speed * Time.deltaTime));
     }
+    
+    #if UNITY_IOS && UNITY_ANDROID
 
     private void TouchLook()
     {
@@ -117,5 +124,7 @@ public class PlayerController : MonoBehaviour
         var motion = transform.right * direction.x + transform.forward * direction.y;
         _controller.Move(motion);
     }
+
+    #endif
 
 }

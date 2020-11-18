@@ -8,6 +8,8 @@ public class GameMaster : MonoBehaviour
     
     private MazeGenerator _mazeGenerator;
 
+    public GameObject lightObject;
+
     private void Awake()
     {
         _mazeGenerator = GetComponent<MazeGenerator>();
@@ -17,6 +19,10 @@ public class GameMaster : MonoBehaviour
     {
         _mazeGenerator.GenerateMaze(Settings.MazeSize);
         _mazeGenerator.SetMazeWave(Settings.EnemyAmount, Settings.EnemyDistance, Settings.EnableBoss, Settings.BossDistance);
+        Debug.Log($"Generated maze with present difficulty of: {Settings.Difficulty}");
+        #if UNITY_EDITOR
+        lightObject.SetActive(false);
+        #endif
     }
 
 }
