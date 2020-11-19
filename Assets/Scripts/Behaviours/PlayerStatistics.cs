@@ -29,10 +29,10 @@ public class PlayerStatistics : MonoBehaviour
     public void Damage(int damage)
     {
         _currentHealth -= damage;
-        if (_currentHealth <= 0)
-        {
-            GameEvents.Instance.ToggleLoseView();
-        }
+        if (_currentHealth > 0)
+            return;
+        _currentHealth = 0;
+        GameEvents.Instance.ToggleLoseView();
     }
 
 }

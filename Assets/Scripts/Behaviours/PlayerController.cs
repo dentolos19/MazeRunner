@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// Credits to whateep
+// https://youtu.be/lYJtTYveYg0
+
+using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour

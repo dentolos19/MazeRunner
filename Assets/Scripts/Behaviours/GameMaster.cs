@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
     private MazeGenerator _mazeGenerator;
 
     public GameObject lightObject;
+    public GameObject pauseObject;
 
     private void Awake()
     {
@@ -22,6 +23,9 @@ public class GameMaster : MonoBehaviour
         Debug.Log($"Generated maze with present difficulty of: {Settings.Difficulty}");
         #if UNITY_EDITOR
         lightObject.SetActive(false);
+        #endif
+        #if UNITY_IOS && UNITY_ANDROID
+        pauseObject.SetActive(true);
         #endif
     }
 

@@ -41,7 +41,7 @@ public class GameEvents : MonoBehaviour
         Time.timeScale = _defaultTimeScale;
     }
     
-    private void TogglePauseView()
+    public void TogglePauseView()
     {
         CloseAnyView();
         pauseView.SetActive(true);

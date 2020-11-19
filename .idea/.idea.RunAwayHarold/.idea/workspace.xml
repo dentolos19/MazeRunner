@@ -20,15 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2f3b091-4013-4e26-a660-70b12ed8e8ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Pause.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Pause.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RunAwayHarold/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MenuEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/MenuEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerStatistics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerStatistics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,14 +67,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/InterfaceEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerInteractions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/IntersceneSoundEmitter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerStatistics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Components/MazeWaveSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/MenuEvents.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/MazeGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/GameMaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Behaviours/PlayerStatistics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game.cs" />
       </list>
     </option>
   </component>
@@ -146,6 +151,7 @@
       <workItem from="1605593151409" duration="253000" />
       <workItem from="1605603962419" duration="20000" />
       <workItem from="1605685033178" duration="3988000" />
+      <workItem from="1605764360630" duration="2169000" />
     </task>
     <servers />
   </component>
