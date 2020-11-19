@@ -21,10 +21,8 @@ public class GameMaster : MonoBehaviour
         _mazeGenerator.GenerateMaze(Settings.MazeSize);
         _mazeGenerator.SetMazeWave(Settings.EnemyAmount, Settings.EnemyDistance, Settings.EnableBoss, Settings.BossDistance);
         Debug.Log($"Generated maze with present difficulty of: {Settings.Difficulty}");
-        #if UNITY_EDITOR
         lightObject.SetActive(false);
-        #endif
-        #if UNITY_IOS && UNITY_ANDROID
+        #if UNITY_IOS || UNITY_ANDROID
         pauseObject.SetActive(true);
         #endif
     }

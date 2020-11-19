@@ -16,8 +16,6 @@ public class EnemyBot : MonoBehaviour
 
     private void Update()
     {
-        if (EntityMonitor.Instance == null)
-            return;
         var distance = Vector3.Distance(transform.position, EntityMonitor.Instance.player.position);
         if (distance <= playerDetectionRadius)
             _agent.SetDestination(EntityMonitor.Instance.player.position);
