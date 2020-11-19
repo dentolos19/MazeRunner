@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        #if UNITY_IOS && UNITY_ANDROID
+        #if UNITY_IOS || UNITY_ANDROID
         _halfScreenWidth = Screen.width / 2;
         _inputDeadzone = Mathf.Pow(Screen.height / 10, 2);
         #endif
