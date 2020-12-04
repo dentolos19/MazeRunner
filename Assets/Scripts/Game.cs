@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Advertisements;
 
 public static class Game
@@ -7,7 +7,7 @@ public static class Game
     public static Configuration Settings { get; private set; }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    public static void InitializeGame()
+    public static void Initialize()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Settings = Configuration.Load();

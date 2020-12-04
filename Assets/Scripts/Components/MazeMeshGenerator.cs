@@ -1,4 +1,4 @@
-﻿// Credits to Joseph Hocking
+// Credits to Joseph Hocking
 // https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
 
 using System.Collections.Generic;

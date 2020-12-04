@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class IntersceneSoundEmitter : MonoBehaviour

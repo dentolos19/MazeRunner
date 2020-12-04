@@ -1,4 +1,4 @@
-﻿// Credits to whateep
+// Credits to whateep
 // https://youtu.be/lYJtTYveYg0
 
 using UnityEngine;
