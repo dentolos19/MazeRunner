@@ -128,7 +128,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.0
+  bundleVersion: 1.0.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -175,8 +175,8 @@ PlayerSettings:
     Android: com.aprodots.runawayharold
     Standalone: com.aprodots.runawayharold
   buildNumber:
-    Standalone: 100
-  AndroidBundleVersionCode: 100
+    Standalone: 101
+  AndroidBundleVersionCode: 101
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
