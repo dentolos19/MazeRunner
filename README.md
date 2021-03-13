@@ -1,20 +1,18 @@
-<table>
-  <tr>
-    <td align="center" width="25%">
-      <img src="./.github/icon.png">
-    </td>
-    <td align="center" width="75%">
+<div align="center">
 
-# Run Away Harold
+<img src="./.github/icon.png" width="100"/>
 
-A maze runner game with procedural generation!
+</div>
 
-<a href="https://play.google.com/store/apps/details?id=com.aprodots.runawayharold&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
-  <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="30%">
-</a>
+<h1 align="center">RunAwayHarold</h1>
 
-  </tr>
-</table>
+<div align="center">
+
+[![](https://img.shields.io/badge/Powered%20By-Unity-blue?logo=unity&style=flat-square)](https://unity.com)
+[![](https://img.shields.io/badge/Made%20With-Rider-blue?logo=jetbrains&style=flat-square)](https://www.jetbrains.com/rider)
+[![](https://img.shields.io/badge/Available%20On-Google%20Play-blue?logo=google-play&style=flat-square)](https://play.google.com/store/apps/details?id=com.aprodots.runawayharold&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
+
+</div>
 
 ## Screenshots
 
