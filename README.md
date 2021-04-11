@@ -4,7 +4,7 @@
 
 </div>
 
-<h1 align="center">RunAwayHarold</h1>
+<h1 align="center">Run Away Harold</h1>
 
 <div align="center">
 
