@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
 
     private float _xRotation;
+    private GameMaster _gameMaster;
 
     [Header("Script Prerequisites")]
 
@@ -21,6 +23,7 @@ public class PlayerControls : MonoBehaviour
 
     private void Start()
     {
+        _gameMaster = FindObjectOfType<GameMaster>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -29,6 +32,12 @@ public class PlayerControls : MonoBehaviour
         RotateCamera();
         MovePlayer();
         ManageInputs();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+            _gameMaster.EndGame(true);
     }
 
     private void RotateCamera()
@@ -52,6 +61,8 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.F))
             flashlightObject.SetActive(!flashlightObject.activeSelf);
+        if (Input.GetKeyUp(KeyCode.Escape))
+            _gameMaster.TogglePauseMenu();
     }
 
 }
