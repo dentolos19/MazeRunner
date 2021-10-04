@@ -4,14 +4,23 @@ public class PlayerControls : MonoBehaviour
 {
 
     private float _xRotation;
-    private CharacterController _characterController;
 
-    public float sensitivity = 100;
-    public float speed = 5;
+    [Header("Script Prerequisites")]
+
+    public Transform playerCamera;
+    public CharacterController _playerController;
+
+    [Header("Script Settings")]
+
+    public float rotationSensitivity = 100;
+    public float movementSpeed = 5;
+
+    [Header("")]
+
+    public GameObject flashlightObject;
 
     private void Start()
     {
-        _characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -19,15 +28,16 @@ public class PlayerControls : MonoBehaviour
     {
         RotateCamera();
         MovePlayer();
+        ManageInputs();
     }
 
     private void RotateCamera()
     {
-        var x = Input.GetAxis("Mouse X") * sensitivity * 10 * Time.deltaTime;
-        var y = Input.GetAxis("Mouse Y") * sensitivity * 10 * Time.deltaTime;
+        var x = Input.GetAxis("Mouse X") * rotationSensitivity * 10 * Time.deltaTime;
+        var y = Input.GetAxis("Mouse Y") * rotationSensitivity * 10 * Time.deltaTime;
         _xRotation -= y;
         _xRotation = Mathf.Clamp(_xRotation, -90, 90);
-        Camera.main.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+        playerCamera.localRotation = Quaternion.Euler(_xRotation, 0, 0);
         transform.Rotate(Vector3.up * x);
     }
 
@@ -35,7 +45,13 @@ public class PlayerControls : MonoBehaviour
     {
         var x = Input.GetAxis("Horizontal");
         var y = Input.GetAxis("Vertical");
-        _characterController.Move((transform.right * x + transform.forward * y) * (speed * Time.deltaTime));
+        _playerController.Move((transform.right * x + transform.forward * y) * (movementSpeed * Time.deltaTime));
+    }
+
+    private void ManageInputs()
+    {
+        if (Input.GetKeyUp(KeyCode.F))
+            flashlightObject.SetActive(!flashlightObject.activeSelf);
     }
 
 }

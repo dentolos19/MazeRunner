@@ -11,7 +11,7 @@ public class MazeGenerator : MonoBehaviour
     public Material floorMaterial;
     public Material wallMaterial;
 
-    [Header("Script Settings")]
+    [Header("Script Settings Settings")]
 
     public int mazeWidth = 3;
     public int mazeHeight = 3;
