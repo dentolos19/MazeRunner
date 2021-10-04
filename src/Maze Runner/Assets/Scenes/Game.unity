@@ -1480,6 +1480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 202060135}
+  deathMenu: {fileID: 0}
+  finishMenu: {fileID: 0}
 --- !u!1 &1770717508
 GameObject:
   m_ObjectHideFlags: 0

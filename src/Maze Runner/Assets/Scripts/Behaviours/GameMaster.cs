@@ -4,6 +4,7 @@ public class GameMaster : MonoBehaviour
 {
 
     private bool _isMenuOn;
+    private float _initialTimeScale;
 
     [Header("Script Prequisites")]
 
@@ -11,9 +12,14 @@ public class GameMaster : MonoBehaviour
     public GameObject deathMenu;
     public GameObject finishMenu;
 
-    private void SetMenuMode(bool isOn)
+    private void Start()
     {
-        Time.timeScale = isOn ? 0 : Game.InitialTimeScale;
+        _initialTimeScale = Time.timeScale;
+    }
+
+    public void SetMenuMode(bool isOn)
+    {
+        Time.timeScale = isOn ? 0 : _initialTimeScale;
         Cursor.lockState = isOn ? CursorLockMode.None : CursorLockMode.Locked;
         _isMenuOn = isOn;
     }
