@@ -25,6 +25,7 @@ public class MazeGenerator : MonoBehaviour
     {
         _navMeshSurface = GetComponent<NavMeshSurface>();
         GenerateMaze(15, 15);
+        playerObject.gameObject.GetComponent<CharacterController>().enabled = true;
     }
 
     private void GenerateMaze(int rows, int columns)

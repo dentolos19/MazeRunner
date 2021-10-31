@@ -14,7 +14,7 @@ public class GameEvents : MonoBehaviour
     public void OnMenu()
     {
         _gameMaster.SetMenuMode(false);
-        // TODO: back to menu scene
+        SceneManager.LoadScene(0);
     }
 
     public void OnRestart()

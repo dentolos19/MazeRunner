@@ -6,7 +6,7 @@ public class GameMaster : MonoBehaviour
     private bool _isMenuOn;
     private float _initialTimeScale;
 
-    [Header("Script Prequisites")]
+    [Header("Script Prerequisites")]
 
     public GameObject pauseMenu;
     public GameObject deathMenu;
