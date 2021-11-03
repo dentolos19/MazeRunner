@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// adapted from https://www.raywenderlich.com/82-procedural-generation-of-mazes-with-unity
 public static class MazeEngine
 {
 

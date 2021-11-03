@@ -25,7 +25,7 @@ public class MazeGenerator : MonoBehaviour
     {
         _navMeshSurface = GetComponent<NavMeshSurface>();
         GenerateMaze(15, 15);
-        playerObject.gameObject.GetComponent<CharacterController>().enabled = true;
+        playerObject.gameObject.GetComponent<CharacterController>().enabled = true; // re-enables controller; in order to not interfere with player position settings
     }
 
     private void GenerateMaze(int rows, int columns)
@@ -41,7 +41,7 @@ public class MazeGenerator : MonoBehaviour
         meshCollider.sharedMesh = meshFilter.mesh;
         var meshRenderer = maze.AddComponent<MeshRenderer>();
         meshRenderer.materials = new[] { floorMaterial, wallMaterial };
-        _navMeshSurface.BuildNavMesh();
+        _navMeshSurface.BuildNavMesh(); // builds navigation mesh for bots
         playerObject.position = GetStartingPosition(mazeData);
         goalObject.position = GetFinishingPosition(mazeData);
     }

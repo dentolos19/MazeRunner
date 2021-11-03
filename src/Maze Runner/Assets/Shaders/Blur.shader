@@ -1,3 +1,4 @@
+// from https://stackoverflow.com/a/51139685
 Shader "Custom/Blur"
 {
 	Properties
