@@ -7,17 +7,14 @@ public class MazeGenerator : MonoBehaviour
     private NavMeshSurface _navMeshSurface;
 
     [Header("Script Prerequisites")]
-
     public Material floorMaterial;
     public Material wallMaterial;
 
     [Header("Script Settings")]
-
     public int mazeWidth = 3;
     public int mazeHeight = 3;
 
     [Header("")]
-
     public Transform playerObject;
     public Transform goalObject;
 

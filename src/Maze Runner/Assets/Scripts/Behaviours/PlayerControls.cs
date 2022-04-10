@@ -7,17 +7,14 @@ public class PlayerControls : MonoBehaviour
     private GameMaster _gameMaster;
 
     [Header("Script Prerequisites")]
-
     public Transform playerCamera;
-    public CharacterController _playerController;
+    public CharacterController playerController;
 
     [Header("Script Settings")]
-
     public float rotationSensitivity = 100;
     public float movementSpeed = 5;
 
     [Header("")]
-
     public GameObject flashlightObject;
 
     private void Start()
@@ -53,7 +50,7 @@ public class PlayerControls : MonoBehaviour
     {
         var x = Input.GetAxis("Horizontal"); // gets left/right movement
         var y = Input.GetAxis("Vertical"); // gets forward/backward movement
-        _playerController.Move((transform.right * x + transform.forward * y) * (movementSpeed * Time.deltaTime));
+        playerController.Move((transform.right * x + transform.forward * y) * (movementSpeed * Time.deltaTime));
     }
 
     private void ManageInputs()
