@@ -1,0 +1,37 @@
+name: Deploy Live Game
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - Assets/**
+      - Packages/**
+      - ProjectSettings/**
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Cache Repository
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+      - name: Build Project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+          allowDirtyBuild: true
+      - name: Deploy Build
+        uses: JamesIves/github-pages-deploy-action@4.2.0
+        with:
+          branch: live
+          folder: build/WebGL/WebGL
+          single-commit: true
