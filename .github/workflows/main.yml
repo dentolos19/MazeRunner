@@ -1,4 +1,4 @@
-name: Deploy Live Game
+name: Automatic Deployment Workflow
 on:
   push:
     branches:
@@ -7,9 +7,19 @@ on:
       - Assets/**
       - Packages/**
       - ProjectSettings/**
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: workflow
+  cancel-in-progress: true
 jobs:
-  deploy:
+  main:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -29,9 +39,12 @@ jobs:
         with:
           targetPlatform: WebGL
           allowDirtyBuild: true
-      - name: Deploy Build
-        uses: JamesIves/github-pages-deploy-action@4.2.0
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v1
         with:
-          branch: live
-          folder: build/WebGL/WebGL
-          single-commit: true
+          path: build/WebGL/WebGL
+      - name: Deploy Artifacts
+        id: deployment
+        uses: actions/deploy-pages@main
