@@ -1,10 +1,11 @@
-name: Automatic Deployment Workflow
+name: GitHub Pages
 on:
   push:
     paths:
       - Assets/**
       - Packages/**
       - ProjectSettings/**
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -49,4 +50,4 @@ jobs:
     steps:
       - name: Deploy Pages
         id: deployment
-        uses: actions/deploy-pages@main
+        uses: actions/deploy-pages@v1
