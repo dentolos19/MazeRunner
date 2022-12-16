@@ -1,0 +1,17 @@
+name: Live Deployment
+run-name: "${{ github.workflow }} #${{ github.run_number }}"
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+on:
+  push:
+    paths:
+      - Assets/**
+      - Packages/**
+      - ProjectSettings/**
+  workflow_dispatch:
+jobs:
+  main:
+    uses: dentolos19/ActionsPlayground/.github/workflows/REUSABLE-unity.yml@main
+    secrets:
+      UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
