@@ -1,8 +1,4 @@
 name: Live Deployment
-run-name: "${{ github.workflow }} #${{ github.run_number }}"
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: true
 on:
   push:
     paths:
@@ -10,8 +6,41 @@ on:
       - Packages/**
       - ProjectSettings/**
   workflow_dispatch:
+permissions:
+  pages: write
+  id-token: write
 jobs:
   main:
-    uses: dentolos19/ActionsPlayground/.github/workflows/REUSABLE-unity.yml@main
-    secrets:
-      UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: GitHub Pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Restore Cache
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+      - name: Build Project
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: WebGL
+          buildName: ${{ github.event.repository.name }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: build/WebGL/${{ github.event.repository.name }}
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1

@@ -1,4 +1,7 @@
-# <img src=".github/icon.png" width="48px"/> Maze Runner
+<h1>
+    <img src="docs/icon.png" style="height: 1em;"/>
+    <span>Maze Runner</span>
+</h1>
 
 A simple maze runner game with procedural generation made with Unity!
 
